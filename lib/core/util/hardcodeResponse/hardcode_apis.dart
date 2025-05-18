@@ -1,0 +1,4 @@
+enum HardcodeApis {
+  login,
+  getAllProducts,
+}
