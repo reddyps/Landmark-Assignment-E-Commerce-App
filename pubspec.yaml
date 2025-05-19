@@ -1,7 +1,7 @@
 name: landmark_assignment
 description: "A new Flutter project."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-version: 1.0.0+2
+version: 1.0.0+3
 
 environment:
   sdk: ^3.6.0
@@ -18,7 +18,7 @@ dependencies:
   intl: any
   logger: ^2.5.0
   google_fonts: any
-  connectivity_plus: ^1.4.0
+  connectivity_plus: ^6.1.4
   riverpod: ^2.6.1
   firebase_auth: ^5.5.3
   get_it: ^8.0.2

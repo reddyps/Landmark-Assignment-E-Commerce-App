@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:injectable/injectable.dart';
 import 'package:landmark_assignment/core/base/base_viewmodel.dart';
 import 'package:landmark_assignment/core/util/logger/logger_helper.dart';
@@ -13,6 +15,8 @@ class CartViewModel extends BaseViewModel {
 
   double totalAmount = 0;
 
+  String errorMsg="";
+
   Future<void> fetchAllCart() async {
     try {
       CartModel model = await CartRepository().getCartDetails();
@@ -20,6 +24,9 @@ class CartViewModel extends BaseViewModel {
         userCart = model.userCart!
             .map((order) => order.copyWith(products: List<Products>.from(order.products ?? [])))
             .toList();
+      }
+      else{
+        errorMsg = model.statusMsg!;
       }
     } catch (e) {
       loge(tag: className, message: "fetchProducts error: $e");

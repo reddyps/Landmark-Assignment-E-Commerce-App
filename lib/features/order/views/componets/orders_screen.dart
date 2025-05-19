@@ -90,6 +90,7 @@ class OrdersScreen extends BaseView<OrdersViewModel> {
                       'assets/animations/order_loading.json',
                       width: 150,
                       height: 150,
+
                       fit: BoxFit.contain,
                     ),
                   );

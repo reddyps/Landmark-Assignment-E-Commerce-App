@@ -17,9 +17,10 @@ class ProductsViewModel extends BaseViewModel {
   RxList<String> categories = <String>[].obs;
   RxList<ProductData> filteredProducts = <ProductData>[].obs;
   RxBool isLoadingMore = false.obs;
+  RxBool isFetching = false.obs;
   int _currentPage = 1;
   int _perPage = 10;
-
+  String errorMsg="";
   late List<ProductData> _allProducts;
   RxList allProducts =[].obs;
 
@@ -33,7 +34,7 @@ class ProductsViewModel extends BaseViewModel {
   void loadMoreProducts() async {
     if (isLoadingMore.value) return;
     isLoadingMore.value = true;
-    await Future.delayed(const Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 2));
 
     final nextItems = _currentFilteredList.skip(_currentPage * _perPage).take(_perPage).toList();
     if (nextItems.isNotEmpty) {
@@ -69,12 +70,17 @@ class ProductsViewModel extends BaseViewModel {
 
   Future<void> fetchProducts() async {
     try {
+      isFetching.value = true;
       ProductModel model = await ProductRepository().getAllProducts();
+      isFetching.value = false;
       if (model.statusCode == 200) {
         _allProducts = model.productModelList!;
         allProducts.value = model.productModelList!;
         categories.addAll(_extractCategories(_allProducts));
         filterProductsByCategory("All Categories");
+      }
+      else{
+        errorMsg = model.statusMsg!;
       }
     } catch (e) {
       loge(tag: className, message: "fetchProducts error: $e");

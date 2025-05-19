@@ -1,4 +1,4 @@
-package com.example.landmark_assignment1
+package com.example.landmark_assignment
 
 import io.flutter.embedding.android.FlutterActivity
 

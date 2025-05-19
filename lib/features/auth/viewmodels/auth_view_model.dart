@@ -57,9 +57,9 @@ class AuthViewModel extends BaseViewModel {
 
   /// Forgot password or login trigger
   onPressForgot() async {
-    if (loginFormKey.currentState!.validate()) {
-      await loginWithEmailAndPassword();
-    }
+    // if (loginFormKey.currentState!.validate()) {
+    //   await loginWithEmailAndPassword();
+    // }
   }
 
   onPressLogin() async {

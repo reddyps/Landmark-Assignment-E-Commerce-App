@@ -8,7 +8,12 @@ class CartDetailBloc extends Bloc<CartDetailEvent, CartDetailState> {
     on<LoadCartDetail>((event, emit) async {
       try {
         await event.viewModel.fetchAllCart().whenComplete((){
-          emit(CartDetailLoaded());
+          if(event.viewModel.userCart.isNotEmpty){
+            emit(CartDetailLoaded());
+          }
+          else{
+            emit(CartDetailLoadError(event.viewModel.errorMsg));
+          }
         });
       } catch (e) {
         emit(CartDetailLoadError(e.toString()));

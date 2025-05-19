@@ -41,7 +41,6 @@ class CartScreen extends BaseView<CartViewModel> {
             child: BlocBuilder<CartDetailBloc, CartDetailState>(
               builder: (BuildContext context, state) {
                 if (state is CartDetailLoaded) {
-                  logD(message: "CartDetailLoaded");
                   final cartItems = viewModel.userCart[viewModel.userIndex]?.products ?? [];
                   if (cartItems.isNotEmpty) {
                     return ListView(

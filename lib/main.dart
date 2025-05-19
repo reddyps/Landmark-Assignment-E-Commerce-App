@@ -8,6 +8,7 @@ import 'package:landmark_assignment/core/util/styles/app_theme_data.dart';
 import 'package:landmark_assignment/core/util/theme/app_theme.dart';
 import 'package:landmark_assignment/core/util/value/size_config.dart';
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await initilizeFirebase();
   configureDependencies();
   runApp(const MyApp());

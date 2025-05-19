@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:landmark_assignment/core/util/value/global_variables.dart';
-import 'package:landmark_assignment/features/cart/views/screens/cart_screen.dart';
-import 'package:landmark_assignment/features/home/views/bloc/home_screen/homescreen_bloc.dart';
 import 'package:landmark_assignment/features/home/views/bloc/home_screen/homescreen_event.dart';
-import 'package:landmark_assignment/features/home/views/home.dart';
-import 'package:landmark_assignment/features/order/views/componets/orders_screen.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../../../core/util/theme/constants.dart';
