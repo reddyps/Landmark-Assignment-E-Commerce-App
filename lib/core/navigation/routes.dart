@@ -1,6 +1,6 @@
 import 'package:landmark_assignment/features/auth/viewmodels/auth_view_model.dart';
-import 'package:landmark_assignment/features/auth/views/login_page.dart';
-import 'package:landmark_assignment/features/auth/views/register_page.dart';
+import 'package:landmark_assignment/features/auth/views/screens/login_page.dart';
+import 'package:landmark_assignment/features/auth/views/screens/register_page.dart';
 import 'package:landmark_assignment/features/home/views/home.dart';
 import 'package:landmark_assignment/features/home/views/screens/home_screen.dart';
 import 'package:landmark_assignment/features/onbording/views/onboarding_screen.dart';

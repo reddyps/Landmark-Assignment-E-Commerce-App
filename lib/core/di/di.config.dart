@@ -20,6 +20,7 @@ import '../../features/onbording/viewmodels/onboarding_view_model.dart'
     as _i504;
 import '../../features/order/viewmodels/orders_view_model.dart' as _i1070;
 import '../../features/product/viewmodels/products_view_model.dart' as _i946;
+import '../../features/profile/viewmodels/profile_view_model.dart' as _i317;
 import '../firebase/firebase_handler.dart' as _i455;
 
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -40,6 +41,7 @@ _i174.GetIt $initGetIt(
   gh.singleton<_i504.OnBoardingViewModel>(() => _i504.OnBoardingViewModel());
   gh.singleton<_i1070.OrdersViewModel>(() => _i1070.OrdersViewModel());
   gh.singleton<_i946.ProductsViewModel>(() => _i946.ProductsViewModel());
+  gh.singleton<_i317.ProfileViewModel>(() => _i317.ProfileViewModel());
   gh.lazySingleton<_i59.FirebaseAuth>(() => firebaseModule.firebaseAuth);
   return getIt;
 }

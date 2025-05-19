@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:landmark_assignment/core/util/theme/constants.dart';
-import '../pages/categories.dart';
 import 'offers_carousel.dart';
 
 class OffersCarouselAndCategories extends StatelessWidget {

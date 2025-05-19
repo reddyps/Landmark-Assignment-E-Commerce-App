@@ -11,7 +11,7 @@ import 'package:landmark_assignment/core/util/value/constants.dart';
 import 'package:landmark_assignment/features/auth/models/user_model.dart';
 import 'package:flutter/foundation.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:landmark_assignment/features/auth/views/register_page.dart';
+import 'package:landmark_assignment/features/auth/views/screens/register_page.dart';
 import 'package:landmark_assignment/core/util/extension/method_extension.dart';
 import 'package:landmark_assignment/features/order/models/model/orders/orders_model.dart';
 import 'package:landmark_assignment/features/order/models/repository/orders_repository.dart';

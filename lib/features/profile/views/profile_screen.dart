@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:landmark_assignment/core/base/base_view.dart';
 import 'package:landmark_assignment/core/util/theme/constants.dart';
+import 'package:landmark_assignment/features/profile/viewmodels/profile_view_model.dart';
 import 'package:landmark_assignment/shared/widgets/list_tile/divider_list_tile.dart';
-import 'package:landmark_assignment/shared/widgets/network_image_with_loader.dart';
-
 import 'components/profile_card.dart';
 import 'components/profile_menu_item_list_tile.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends BaseView<ProfileViewModel> {
   const ProfileScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ProfileViewModel viewModel) {
     return Scaffold(
       body: ListView(
         children: [
@@ -142,7 +142,9 @@ class ProfileScreen extends StatelessWidget {
 
           // Log Out
           ListTile(
-            onTap: () {},
+            onTap: () {
+              viewModel.logOUT();
+            },
             minLeadingWidth: 24,
             leading: SvgPicture.asset(
               "assets/icons/Logout.svg",
@@ -161,5 +163,10 @@ class ProfileScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  @override
+  ProfileViewModel createViewModel() {
+    return ProfileViewModel();
   }
 }

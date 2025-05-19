@@ -5,8 +5,8 @@ import 'package:landmark_assignment/features/auth/models/user_model.dart';
 
 Future<void> fireBaseAuthCall<T>({
   FirebaseAuthType? firebaseAuthType,
-  required String email,
-  required String password,
+  String? email,
+  String? password,
   required Function(int statusCode, String errorDesc) failed,
   required Function(dynamic response) success,
 }) async {
@@ -15,8 +15,8 @@ Future<void> fireBaseAuthCall<T>({
       case FirebaseAuthType.login:
         try {
           final userCredential = await _auth.signInWithEmailAndPassword(
-            email: email,
-            password: password,
+            email: email!,
+            password: password!,
           );
           if (userCredential.user != null) {
             success(UserModel(
@@ -36,8 +36,8 @@ Future<void> fireBaseAuthCall<T>({
       case FirebaseAuthType.signIN:
         try {
           final userCredential = await _auth.createUserWithEmailAndPassword(
-            email: email,
-            password: password,
+            email: email!,
+            password: password!,
           );
           if (userCredential.user != null) {
             success(UserModel(
@@ -74,11 +74,21 @@ Future<void> fireBaseAuthCall<T>({
           failed(-1, 'An unexpected error occurred: $e');
         }
         break;
+      case FirebaseAuthType.logOut:
+        try {
+          await _auth.signOut();
+          success("");
+        } on FirebaseAuthException catch (e) {
+          failed(-1, _handleAuthError(e.code));
+        } catch (e) {
+          failed(-1, Constants.noNetworkErrMsg);
+        }
+        break;
       default:
         try {
           final userCredential = await _auth.signInWithEmailAndPassword(
-            email: email,
-            password: password,
+            email: email!,
+            password: password!,
           );
           if (userCredential.user != null) {
             success(UserModel(

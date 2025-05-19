@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       locale: const Locale('en'),
       debugShowCheckedModeBanner: false,
-      home: Routes.loginScreen,
+      home: Routes.onBoardScreen,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       theme: AppTheme.lightTheme(context),

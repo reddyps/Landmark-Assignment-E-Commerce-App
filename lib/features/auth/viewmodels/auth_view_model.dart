@@ -10,7 +10,7 @@ import 'package:landmark_assignment/core/util/logger/logger_helper.dart';
 import 'package:landmark_assignment/core/util/value/constants.dart';
 import 'package:landmark_assignment/core/util/value/global_variables.dart';
 import 'package:landmark_assignment/features/auth/models/user_model.dart';
-import 'package:landmark_assignment/features/auth/views/register_page.dart';
+import 'package:landmark_assignment/features/auth/views/screens/register_page.dart';
 
 @singleton
 class AuthViewModel extends BaseViewModel {
@@ -111,10 +111,10 @@ class AuthViewModel extends BaseViewModel {
         dismissDialogIndicator();
         showDialogAuto(method: () {
           pop();
-          GlobalVariables.userID = response.uid;
           push(Routes.homeScreen);
         }, message: context.locale.loginSuccess);
         _user = response;
+        GlobalVariables.userData = _user!;
       },
     );
   }
@@ -156,7 +156,7 @@ class AuthViewModel extends BaseViewModel {
         showDialogAuto(method: () {
           pop();
           push(Routes.homeScreen);
-        }, message: context.locale.registerSuccess);
+        }, message: context.locale.userLogOut);
         _user = response;
       },
     );

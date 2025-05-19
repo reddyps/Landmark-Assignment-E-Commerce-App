@@ -1,5 +1,6 @@
 enum FirebaseAuthType {
   login,
   signIN,
-  registerWithMail
+  registerWithMail,
+  logOut
 }

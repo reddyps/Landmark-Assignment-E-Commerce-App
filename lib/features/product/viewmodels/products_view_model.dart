@@ -3,12 +3,11 @@ import 'package:injectable/injectable.dart';
 import 'package:landmark_assignment/core/base/base_viewmodel.dart';
 import 'package:landmark_assignment/core/util/extension/method_extension.dart';
 import 'package:landmark_assignment/core/util/logger/logger_helper.dart';
-import 'package:landmark_assignment/core/util/value/constants.dart';
 import 'package:landmark_assignment/core/util/value/global_variables.dart';
 import 'package:landmark_assignment/features/product/models/model/cart/cart_model.dart';
 import 'package:landmark_assignment/features/product/models/model/product/product_model.dart';
 import 'package:landmark_assignment/features/product/models/repo/repository/product_repository.dart';
-import 'package:landmark_assignment/features/product/views/pages/product_details_screen.dart';
+import 'package:landmark_assignment/features/product/views/screens/product_details_screen.dart';
 
 @singleton
 class ProductsViewModel extends BaseViewModel {

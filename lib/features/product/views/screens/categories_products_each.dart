@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:landmark_assignment/core/util/extension/method_extension.dart';
-import 'package:landmark_assignment/core/util/value/size_config.dart';
 import 'package:landmark_assignment/features/product/viewmodels/products_view_model.dart';
-import 'package:landmark_assignment/features/product/views/pages/categories.dart';
-import 'package:landmark_assignment/features/product/views/pages/product_details_screen.dart';
 import 'package:landmark_assignment/shared/widgets/product_card.dart';
 
 class CategoriesProductsEach extends StatefulWidget {

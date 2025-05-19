@@ -1,0 +1,29 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* This makes the wrapper take up the full viewport height */
+    background-color: #FFFFFF; /* This sets the background color to amber */
+}
+
+.wrapper img {
+    max-width: 20%; /* This ensures the image does not overflow the wrapper */
+    max-height: 20%; /* This maintains the aspect ratio of the image */
+    animation: zoomInOut 1s ease-in-out;
+}
+
+@keyframes zoomInOut {
+  0% {
+    transform: scale(0.1);
+ }
+  100% {
+    transform: scale(1);
+ }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+

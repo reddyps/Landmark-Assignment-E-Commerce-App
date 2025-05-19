@@ -5,8 +5,8 @@ import 'package:landmark_assignment/core/base/base_view.dart';
 import 'package:landmark_assignment/core/util/value/constants.dart';
 import 'package:landmark_assignment/features/product/viewmodels/products_view_model.dart';
 import 'package:landmark_assignment/features/product/views/components/offer_carousel_and_categories.dart';
-import 'package:landmark_assignment/features/product/views/pages/categories_products_all.dart';
-import 'package:landmark_assignment/features/product/views/pages/categories_products_each.dart';
+import 'package:landmark_assignment/features/product/views/screens/categories_products_all.dart';
+import 'package:landmark_assignment/features/product/views/screens/categories_products_each.dart';
 
 class ProductsScreen extends BaseView<ProductsViewModel> {
   ProductsScreen({super.key});

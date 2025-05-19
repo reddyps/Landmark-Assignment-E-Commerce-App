@@ -11,7 +11,7 @@ import 'package:landmark_assignment/core/util/value/dimens.dart';
 import 'package:landmark_assignment/features/auth/models/user_model.dart';
 import 'package:flutter/foundation.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:landmark_assignment/features/auth/views/register_page.dart';
+import 'package:landmark_assignment/features/auth/views/screens/register_page.dart';
 import 'package:landmark_assignment/features/onbording/model/onboard.dart';
 
 import '../../../main.dart';

@@ -28,6 +28,7 @@
   "product_details" : "Product Details",
   "shipping_information" : "Shipping Information",
   "confirmPassword" : "Confirm Password",
-  "passwordNotMatch" : "Entered password and confirm password mismatch"
+  "passwordNotMatch" : "Entered password and confirm password mismatch",
+  "userLogOut" : "User Logout Successfully."
 
 }

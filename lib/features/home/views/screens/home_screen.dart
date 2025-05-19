@@ -55,13 +55,9 @@ class _HomeScreenState extends State<HomeScreen> {
         leading: const SizedBox(),
         leadingWidth: 0,
         centerTitle: false,
-        title: SvgPicture.asset(
-          "assets/logo/Shoplon.svg",
-          colorFilter: ColorFilter.mode(
-              Theme.of(context).iconTheme.color!, BlendMode.srcIn),
+        title: Image.asset("assets/logo/land_mark.jpg",
           height: 20,
-          width: 100,
-        ),
+          width: 100,),
         actions: [
           IconButton(
             onPressed: () {},
