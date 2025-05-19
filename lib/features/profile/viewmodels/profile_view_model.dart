@@ -21,7 +21,7 @@ class ProfileViewModel extends BaseViewModel {
         dismissDialogIndicator();
         showDialogAuto(method: () {
           push(Routes.loginScreen);
-        }, message: context.locale.registerSuccess);
+        }, message: context.locale.userLogOut);
       },
     );
   }
