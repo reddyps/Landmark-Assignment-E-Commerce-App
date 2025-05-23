@@ -126,7 +126,6 @@ class _CategoriesProductsState extends State<CategoriesProducts> {
     if (!widget.viewModel.isLoadingMore.value) {
       return totalProducts;
     }
-    // For every 5 products, add 1 loading indicator
     int loadingCount = (totalProducts / 5).ceil();
     return totalProducts + loadingCount;
   }

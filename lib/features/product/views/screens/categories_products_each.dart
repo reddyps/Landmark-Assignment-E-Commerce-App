@@ -93,20 +93,6 @@ class _CategoriesProductsState extends State<CategoriesProductsEach> {
       );
     });
   }
-  int _calculateItemCount() {
-    final totalProducts = widget.viewModel.filteredProducts.length;
-    if (!widget.viewModel.isLoadingMore.value) {
-      return totalProducts;
-    }
-    // For every 5 products, add 1 loading indicator
-    int loadingCount = (totalProducts / 5).ceil();
-    return totalProducts + loadingCount;
-  }
-
-  bool _isLoadingIndex(int index) {
-    if (!widget.viewModel.isLoadingMore.value) return false;
-    return (index + 1) % 6 == 0;
-  }
 }
 
 
