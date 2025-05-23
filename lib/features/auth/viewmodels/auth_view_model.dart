@@ -148,6 +148,7 @@ class AuthViewModel extends BaseViewModel {
       email: registerEmailController.text.trim(),
       password: registerPasswordController.text.trim(),
       failed: (int statusCode, String errorDesc) {
+        print("catch $statusCode  ${errorDesc.toString()}");
         dismissDialogIndicator();
         showDialogAuto(method: () => pop(), message: errorDesc);
       },
