@@ -101,11 +101,6 @@ class ProductsViewModel extends BaseViewModel {
       showCircularIndicator(message: "Please wait");
       CartModel model = await ProductRepository().addProductCart(cartModelReuquest);
       dismissDialogIndicator();
-      // if (model.statusCode == 200) {
-      //   _allProducts = model.cartList!;
-      //   categories.addAll(_extractCategories(_allProducts));
-      //   filterProductsByCategory("All Categories");
-      // }
     } catch (e) {
       loge(tag: className, message: "fetchProducts error: $e");
     }
