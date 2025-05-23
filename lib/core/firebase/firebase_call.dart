@@ -60,10 +60,9 @@ Future<void> fireBaseAuthCall<T>({
           failed(-1, Constants.noNetworkErrMsg);
         }
         break;
-      case FirebaseAuthType.registerWithMail: // THIS IS YOUR "SIGN IN WITH GOOGLE" CASE
+      case FirebaseAuthType.registerWithMail:
         try {
           UserCredential userCredential;
-
           if (kIsWeb) {
             final googleProvider = GoogleAuthProvider();
             userCredential = await FirebaseAuth.instance.signInWithPopup(
@@ -138,14 +137,12 @@ Future<void> fireBaseAuthCall<T>({
         }
     }
   } catch (e) {
-    print("catch  ${e.toString()}");
     failed(-1, e.toString());
   }
 }
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 String _handleAuthError(String code) {
-  print("_handleAuthError  ${code.toString()}");
   switch (code) {
     case 'invalid-email':
       return 'Invalid email address.';

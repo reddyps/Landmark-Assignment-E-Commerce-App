@@ -1,14 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
-import 'package:landmark_assignment/core/base/base_view.dart';
 import 'package:landmark_assignment/core/util/extension/method_extension.dart';
 import 'package:landmark_assignment/core/util/theme/constants.dart';
 import 'package:landmark_assignment/core/util/value/images.dart';
 import 'package:landmark_assignment/features/auth/viewmodels/auth_view_model.dart';
 import 'package:landmark_assignment/features/auth/views/components/register_email_password_form.dart';
-import 'package:landmark_assignment/shared/widgets/custom_button.dart';
-import 'package:landmark_assignment/shared/widgets/custom_textfield.dart';
 
 class RegisterPage extends StatelessWidget {
   RegisterPage({super.key, required this.authViewModel});
