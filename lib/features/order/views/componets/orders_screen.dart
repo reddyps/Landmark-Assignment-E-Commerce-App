@@ -2,17 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:landmark_assignment/core/base/base_view.dart';
-import 'package:landmark_assignment/core/util/logger/logger_helper.dart';
-import 'package:landmark_assignment/core/util/value/size_config.dart';
-import 'package:landmark_assignment/features/home/views/bloc/home_screen/homescreen_state.dart';
 import 'package:landmark_assignment/features/order/viewmodels/orders_view_model.dart';
 import 'package:landmark_assignment/features/order/views/bloc/order_detail_bloc.dart';
 import 'package:landmark_assignment/features/order/views/bloc/order_detail_event.dart';
 import 'package:landmark_assignment/features/order/views/bloc/order_detail_state.dart';
 import 'package:landmark_assignment/features/order/views/componets/oder_deatils_Card_widget.dart';
-import 'package:landmark_assignment/features/product/views/components/offer_carousel_and_categories.dart';
-import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:lottie/lottie.dart';
 
 class OrdersScreen extends BaseView<OrdersViewModel> {
