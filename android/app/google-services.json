@@ -12,7 +12,12 @@
           "package_name": "com.example.landmark_assignment"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "455647601344-4r6ldl9hdhvqu6csk87t6uctsu2s47od.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBcJnfPwcRSbDyoY5HC_LQkr3B9q6SYlog"
@@ -20,7 +25,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "455647601344-4r6ldl9hdhvqu6csk87t6uctsu2s47od.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
