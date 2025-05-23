@@ -19,11 +19,13 @@ Future<void> fireBaseAuthCall<T>({
             password: password!,
           );
           if (userCredential.user != null) {
-            success(UserModel(
-              uid: userCredential.user!.uid,
-              email: userCredential.user!.email ?? '',
-              displayName: userCredential.user!.displayName,
-            ));
+            success(
+              UserModel(
+                uid: userCredential.user!.uid,
+                email: userCredential.user!.email ?? '',
+                displayName: userCredential.user!.displayName,
+              ),
+            );
           } else {
             failed(-1, 'Failed to login. User not found.');
           }
@@ -40,11 +42,13 @@ Future<void> fireBaseAuthCall<T>({
             password: password!,
           );
           if (userCredential.user != null) {
-            success(UserModel(
-              uid: userCredential.user!.uid,
-              email: userCredential.user!.email ?? '',
-              displayName: userCredential.user!.displayName,
-            ));
+            success(
+              UserModel(
+                uid: userCredential.user!.uid,
+                email: userCredential.user!.email ?? '',
+                displayName: userCredential.user!.displayName,
+              ),
+            );
           } else {
             failed(-1, 'Failed to register user.');
           }
@@ -57,14 +61,18 @@ Future<void> fireBaseAuthCall<T>({
       case FirebaseAuthType.registerWithMail:
         try {
           final googleProvider = GoogleAuthProvider();
-          final userCredential = await FirebaseAuth.instance.signInWithPopup(googleProvider);
+          final userCredential = await FirebaseAuth.instance.signInWithPopup(
+            googleProvider,
+          );
           final user = userCredential.user;
           if (user != null) {
-            success(UserModel(
-              uid: user.uid,
-              email: user.email ?? '',
-              displayName: user.displayName,
-            ));
+            success(
+              UserModel(
+                uid: user.uid,
+                email: user.email ?? '',
+                displayName: user.displayName,
+              ),
+            );
           } else {
             failed(-1, 'Google sign-in failed. User not found.');
           }
@@ -91,11 +99,13 @@ Future<void> fireBaseAuthCall<T>({
             password: password!,
           );
           if (userCredential.user != null) {
-            success(UserModel(
-              uid: userCredential.user!.uid,
-              email: userCredential.user!.email ?? '',
-              displayName: userCredential.user!.displayName,
-            ));
+            success(
+              UserModel(
+                uid: userCredential.user!.uid,
+                email: userCredential.user!.email ?? '',
+                displayName: userCredential.user!.displayName,
+              ),
+            );
           } else {
             failed(-1, 'Failed to login. User not found.');
           }
@@ -136,5 +146,3 @@ String _handleAuthError(String code) {
       return 'An unknown error occurred.';
   }
 }
-
-

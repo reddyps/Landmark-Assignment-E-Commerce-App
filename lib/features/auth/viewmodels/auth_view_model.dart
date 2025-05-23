@@ -156,7 +156,7 @@ class AuthViewModel extends BaseViewModel {
         showDialogAuto(method: () {
           pop();
           push(Routes.homeScreen);
-        }, message: context.locale.userLogOut);
+        }, message: context.locale.loginSuccess);
         _user = response;
       },
     );

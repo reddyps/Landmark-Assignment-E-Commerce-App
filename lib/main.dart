@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:landmark_assignment/core/di/di.dart';
 import 'package:landmark_assignment/core/firebase/firebase_handler.dart';
 import 'package:landmark_assignment/core/navigation/routes.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:landmark_assignment/core/util/styles/app_theme_data.dart';
 import 'package:landmark_assignment/core/util/theme/app_theme.dart';
 import 'package:landmark_assignment/core/util/value/size_config.dart';
+import 'package:landmark_assignment/l10n/app_localizations.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initilizeFirebase();
