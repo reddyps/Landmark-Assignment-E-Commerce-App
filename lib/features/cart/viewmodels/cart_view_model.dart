@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:injectable/injectable.dart';
 import 'package:landmark_assignment/core/base/base_viewmodel.dart';
 import 'package:landmark_assignment/core/util/logger/logger_helper.dart';

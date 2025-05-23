@@ -1,22 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:injectable/injectable.dart';
 import 'package:landmark_assignment/core/base/base_viewmodel.dart';
-import 'package:landmark_assignment/core/firebase/firebase_auth_type.dart';
-import 'package:landmark_assignment/core/firebase/firebase_call.dart';
-import 'package:landmark_assignment/core/navigation/routes.dart';
-import 'package:landmark_assignment/core/util/extension/method_extension.dart';
 import 'package:landmark_assignment/core/util/logger/logger_helper.dart';
-import 'package:landmark_assignment/core/util/value/constants.dart';
-import 'package:landmark_assignment/features/auth/models/user_model.dart';
-import 'package:flutter/foundation.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:landmark_assignment/features/auth/views/screens/register_page.dart';
-import 'package:landmark_assignment/core/util/extension/method_extension.dart';
 import 'package:landmark_assignment/features/order/models/model/orders/orders_model.dart';
 import 'package:landmark_assignment/features/order/models/repository/orders_repository.dart';
 
-import '../../../main.dart';
 
 @singleton
 class OrdersViewModel extends BaseViewModel { // Changed to ChangeNotifier
