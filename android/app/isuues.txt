@@ -1,13 +1,55 @@
 C:\flutter_windows_3.16.5-stable\flutter\bin\flutter.bat --no-color build apk
-Running Gradle task 'assembleRelease'...                        
+Resolving dependencies...
+Downloading packages...
+  _flutterfire_internals 1.3.54 (1.3.55 available)
+  bloc 7.2.1 (9.0.0 available)
+  bloc_test 8.5.0 (10.0.0 available)
+  dart_style 3.0.1 (3.1.0 available)
+  ffi 2.1.3 (2.1.4 available)
+  firebase_auth 5.5.3 (5.5.4 available)
+  firebase_auth_platform_interface 7.6.2 (7.6.3 available)
+  firebase_auth_web 5.14.2 (5.14.3 available)
+  firebase_core 3.13.0 (3.13.1 available)
+  firebase_core_web 2.22.0 (2.23.0 available)
+  flutter_bloc 7.3.3 (9.1.1 available)
+  flutter_stripe 9.6.0 (11.5.0 available)
+  freezed 2.5.8 (3.0.6 available)
+  freezed_annotation 2.4.4 (3.0.0 available)
+  js 0.6.7 (0.7.2 available)
+  leak_tracker 10.0.9 (11.0.1 available)
+  leak_tracker_flutter_testing 3.0.9 (3.0.10 available)
+  leak_tracker_testing 3.0.1 (3.0.2 available)
+  lints 5.1.1 (6.0.0 available)
+  material_color_utilities 0.11.1 (0.12.0 available)
+  meta 1.16.0 (1.17.0 available)
+  mocktail 0.2.0 (1.0.4 available)
+  petitparser 6.0.2 (6.1.0 available)
+  sqflite 2.4.1 (2.4.2 available)
+  sqflite_android 2.4.0 (2.4.1 available)
+  sqflite_common 2.5.4+6 (2.5.5 available)
+  sqflite_darwin 2.4.1+1 (2.4.2 available)
+  stripe_android 9.6.0+2 (11.5.0 available)
+  stripe_ios 9.6.0 (11.5.0 available)
+  stripe_platform_interface 9.6.0 (11.5.0 available)
+  synchronized 3.3.0+3 (3.3.1 available)
+  test 1.25.15 (1.26.2 available)
+  test_api 0.7.4 (0.7.6 available)
+  test_core 0.6.8 (0.6.11 available)
+  vector_graphics_compiler 1.1.16 (1.1.17 available)
+  vector_math 2.1.4 (2.2.0 available)
+  vm_service 15.0.0 (15.0.1 available)
+Got dependencies!
+37 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Running Gradle task 'assembleRelease'...
 "ka": 4 untranslated message(s).
-To see a detailed report, use the untranslated-messages-file 
+To see a detailed report, use the untranslated-messages-file
 option in the l10n.yaml file:
 untranslated-messages-file: desiredFileName.txt
-<other option>: <other selection> 
+<other option>: <other selection>
 
 
-This will generate a JSON format file containing all messages that 
+This will generate a JSON format file containing all messages that
 need to be translated.
 Font asset "CupertinoIcons.ttf" was tree-shaken, reducing it from 257628 to 1040 bytes (99.6% reduction). Tree-shaking can be disabled by providing the --no-tree-shake-icons flag when building your app.
 Font asset "MaterialIcons-Regular.otf" was tree-shaken, reducing it from 1645184 to 1972 bytes (99.9% reduction). Tree-shaking can be disabled by providing the --no-tree-shake-icons flag when building your app.
@@ -84,15 +126,20 @@ Caused by: java.lang.Exception: Could not close incremental caches in D:\backup\
 	at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.close(BasicMapsOwner.kt:53)
 	at org.jetbrains.kotlin.com.google.common.io.Closer.close(Closer.java:223)
 	... 24 more
-	Suppressed: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\50072581\AppData\Local\Pub\Cache\hosted\pub.dev\stripe_android-9.6.0+2\android\src\main\kotlin\com\facebook\react\bridge\BaseActivityEventListener.kt and D:\backup\work\Landmark-Assignment-E-Commerce-App\android.
-		at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
-		at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
-		at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:24)
-		at org.jetbrains.kotlin.incremental.storage.FileDescriptor.save(FileToPathConverter.kt:33)
-		at org.jetbrains.kotlin.incremental.storage.FileDescriptor.save(FileToPathConverter.kt:30)
-		at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(PersistentMapImpl.java:443)
-		at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(PersistentMapImpl.java:422)
-		at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(PersistentHashMap.java:105)
+	Suppressed: java.lang.IllegalStateException: Storage for [D:\backup\work\Landmark-Assignment-E-Commerce-App\build\stripe_android\kotlin\compileReleaseKotlin\cacheable\caches-jvm\jvm\kotlin\class-fq-name-to-source.tab] is already registered
+		at org.jetbrains.kotlin.com.intellij.util.io.FilePageCache.registerPagedFileStorage(FilePageCache.java:410)
+		at org.jetbrains.kotlin.com.intellij.util.io.PagedFileStorage.<init>(PagedFileStorage.java:72)
+		at org.jetbrains.kotlin.com.intellij.util.io.ResizeableMappedFile.<init>(ResizeableMappedFile.java:55)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentBTreeEnumerator.<init>(PersistentBTreeEnumerator.java:128)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentEnumerator.createDefaultEnumerator(PersistentEnumerator.java:52)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.<init>(PersistentMapImpl.java:165)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.<init>(PersistentMapImpl.java:140)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapBuilder.buildImplementation(PersistentMapBuilder.java:88)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapBuilder.build(PersistentMapBuilder.java:71)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.<init>(PersistentHashMap.java:45)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.<init>(PersistentHashMap.java:71)
+		at org.jetbrains.kotlin.incremental.storage.LazyStorage.createMap(LazyStorage.kt:62)
+		at org.jetbrains.kotlin.incremental.storage.LazyStorage.getStorageOrCreateNew(LazyStorage.kt:59)
 		at org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)
 		at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMemoryStorage.kt:108)
 		at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemoryStorage.kt:136)
@@ -101,19 +148,23 @@ Caused by: java.lang.Exception: Could not close incremental caches in D:\backup\
 		at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
 		at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:87)
 		... 26 more
-	Suppressed: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\50072581\AppData\Local\Pub\Cache\hosted\pub.dev\stripe_android-9.6.0+2\android\src\main\kotlin\com\facebook\react\bridge\BaseActivityEventListener.kt and D:\backup\work\Landmark-Assignment-E-Commerce-App\android.
-		at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
-		at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
-		at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:24)
-		at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileToPathConverter.kt:50)
-		at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileToPathConverter.kt:30)
-		at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.hashKey(LinkedCustomHashMap.java:109)
-		at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.remove(LinkedCustomHashMap.java:153)
-		at org.jetbrains.kotlin.com.intellij.util.containers.SLRUMap.remove(SLRUMap.java:89)
-		at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.flushAppendCache(PersistentMapImpl.java:999)
-		at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(PersistentMapImpl.java:451)
-		at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(PersistentMapImpl.java:422)
-		at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(PersistentHashMap.java:105)
+		Suppressed: java.lang.Exception: Storage[D:\backup\work\Landmark-Assignment-E-Commerce-App\build\stripe_android\kotlin\compileReleaseKotlin\cacheable\caches-jvm\jvm\kotlin\class-fq-name-to-source.tab] registration stack trace
+			at org.jetbrains.kotlin.com.intellij.util.io.FilePageCache.registerPagedFileStorage(FilePageCache.java:437)
+			... 45 more
+	Suppressed: java.lang.IllegalStateException: Storage for [D:\backup\work\Landmark-Assignment-E-Commerce-App\build\stripe_android\kotlin\compileReleaseKotlin\cacheable\caches-jvm\jvm\kotlin\source-to-classes.tab] is already registered
+		at org.jetbrains.kotlin.com.intellij.util.io.FilePageCache.registerPagedFileStorage(FilePageCache.java:410)
+		at org.jetbrains.kotlin.com.intellij.util.io.PagedFileStorage.<init>(PagedFileStorage.java:72)
+		at org.jetbrains.kotlin.com.intellij.util.io.ResizeableMappedFile.<init>(ResizeableMappedFile.java:55)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentBTreeEnumerator.<init>(PersistentBTreeEnumerator.java:128)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentEnumerator.createDefaultEnumerator(PersistentEnumerator.java:52)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.<init>(PersistentMapImpl.java:165)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.<init>(PersistentMapImpl.java:140)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapBuilder.buildImplementation(PersistentMapBuilder.java:88)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapBuilder.build(PersistentMapBuilder.java:71)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.<init>(PersistentHashMap.java:45)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.<init>(PersistentHashMap.java:71)
+		at org.jetbrains.kotlin.incremental.storage.LazyStorage.createMap(LazyStorage.kt:62)
+		at org.jetbrains.kotlin.incremental.storage.LazyStorage.getStorageOrCreateNew(LazyStorage.kt:59)
 		at org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)
 		at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMemoryStorage.kt:108)
 		at org.jetbrains.kotlin.incremental.storage.AppendableInMemoryStorage.applyChanges(InMemoryStorage.kt:179)
@@ -123,17 +174,23 @@ Caused by: java.lang.Exception: Could not close incremental caches in D:\backup\
 		at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
 		at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:87)
 		... 26 more
-	Suppressed: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\50072581\AppData\Local\Pub\Cache\hosted\pub.dev\stripe_android-9.6.0+2\android\src\main\kotlin\com\facebook\react\bridge\BaseActivityEventListener.kt and D:\backup\work\Landmark-Assignment-E-Commerce-App\android.
-		at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
-		at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
-		at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:24)
-		at org.jetbrains.kotlin.incremental.storage.FileDescriptor.save(FileToPathConverter.kt:33)
-		at org.jetbrains.kotlin.incremental.storage.FileDescriptor.save(FileToPathConverter.kt:30)
-		at org.jetbrains.kotlin.incremental.storage.AppendableCollectionExternalizer.save(LazyStorage.kt:151)
-		at org.jetbrains.kotlin.incremental.storage.AppendableCollectionExternalizer.save(LazyStorage.kt:142)
-		at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(PersistentMapImpl.java:443)
-		at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(PersistentMapImpl.java:422)
-		at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(PersistentHashMap.java:105)
+		Suppressed: java.lang.Exception: Storage[D:\backup\work\Landmark-Assignment-E-Commerce-App\build\stripe_android\kotlin\compileReleaseKotlin\cacheable\caches-jvm\jvm\kotlin\source-to-classes.tab] registration stack trace
+			at org.jetbrains.kotlin.com.intellij.util.io.FilePageCache.registerPagedFileStorage(FilePageCache.java:437)
+			... 46 more
+	Suppressed: java.lang.IllegalStateException: Storage for [D:\backup\work\Landmark-Assignment-E-Commerce-App\build\stripe_android\kotlin\compileReleaseKotlin\cacheable\caches-jvm\jvm\kotlin\internal-name-to-source.tab] is already registered
+		at org.jetbrains.kotlin.com.intellij.util.io.FilePageCache.registerPagedFileStorage(FilePageCache.java:410)
+		at org.jetbrains.kotlin.com.intellij.util.io.PagedFileStorage.<init>(PagedFileStorage.java:72)
+		at org.jetbrains.kotlin.com.intellij.util.io.ResizeableMappedFile.<init>(ResizeableMappedFile.java:55)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentBTreeEnumerator.<init>(PersistentBTreeEnumerator.java:128)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentEnumerator.createDefaultEnumerator(PersistentEnumerator.java:52)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.<init>(PersistentMapImpl.java:165)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.<init>(PersistentMapImpl.java:140)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapBuilder.buildImplementation(PersistentMapBuilder.java:88)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapBuilder.build(PersistentMapBuilder.java:71)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.<init>(PersistentHashMap.java:45)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.<init>(PersistentHashMap.java:71)
+		at org.jetbrains.kotlin.incremental.storage.LazyStorage.createMap(LazyStorage.kt:62)
+		at org.jetbrains.kotlin.incremental.storage.LazyStorage.getStorageOrCreateNew(LazyStorage.kt:59)
 		at org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)
 		at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMemoryStorage.kt:108)
 		at org.jetbrains.kotlin.incremental.storage.AppendableInMemoryStorage.applyChanges(InMemoryStorage.kt:179)
@@ -143,20 +200,28 @@ Caused by: java.lang.Exception: Could not close incremental caches in D:\backup\
 		at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
 		at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:87)
 		... 26 more
+		Suppressed: java.lang.Exception: Storage[D:\backup\work\Landmark-Assignment-E-Commerce-App\build\stripe_android\kotlin\compileReleaseKotlin\cacheable\caches-jvm\jvm\kotlin\internal-name-to-source.tab] registration stack trace
+			at org.jetbrains.kotlin.com.intellij.util.io.FilePageCache.registerPagedFileStorage(FilePageCache.java:437)
+			... 46 more
 	Suppressed: java.lang.Exception: Could not close incremental caches in D:\backup\work\Landmark-Assignment-E-Commerce-App\build\stripe_android\kotlin\compileReleaseKotlin\cacheable\caches-jvm\lookups: id-to-file.tab, file-to-id.tab
 		at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:95)
 		at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.close(BasicMapsOwner.kt:53)
 		at org.jetbrains.kotlin.incremental.LookupStorage.close(LookupStorage.kt:155)
 		... 25 more
-		Suppressed: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\50072581\AppData\Local\Pub\Cache\hosted\pub.dev\stripe_android-9.6.0+2\android\src\main\kotlin\com\facebook\react\bridge\BaseActivityEventListener.kt and D:\backup\work\Landmark-Assignment-E-Commerce-App\android.
-			at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
-			at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
-			at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:24)
-			at org.jetbrains.kotlin.incremental.storage.LegacyFileExternalizer.save(IdToFileMap.kt:51)
-			at org.jetbrains.kotlin.incremental.storage.LegacyFileExternalizer.save(IdToFileMap.kt:48)
-			at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(PersistentMapImpl.java:443)
-			at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(PersistentMapImpl.java:422)
-			at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(PersistentHashMap.java:105)
+		Suppressed: java.lang.IllegalStateException: Storage for [D:\backup\work\Landmark-Assignment-E-Commerce-App\build\stripe_android\kotlin\compileReleaseKotlin\cacheable\caches-jvm\lookups\id-to-file.tab] is already registered
+			at org.jetbrains.kotlin.com.intellij.util.io.FilePageCache.registerPagedFileStorage(FilePageCache.java:410)
+			at org.jetbrains.kotlin.com.intellij.util.io.PagedFileStorage.<init>(PagedFileStorage.java:72)
+			at org.jetbrains.kotlin.com.intellij.util.io.ResizeableMappedFile.<init>(ResizeableMappedFile.java:55)
+			at org.jetbrains.kotlin.com.intellij.util.io.PersistentBTreeEnumerator.<init>(PersistentBTreeEnumerator.java:128)
+			at org.jetbrains.kotlin.com.intellij.util.io.PersistentEnumerator.createDefaultEnumerator(PersistentEnumerator.java:52)
+			at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.<init>(PersistentMapImpl.java:165)
+			at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.<init>(PersistentMapImpl.java:140)
+			at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapBuilder.buildImplementation(PersistentMapBuilder.java:88)
+			at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapBuilder.build(PersistentMapBuilder.java:71)
+			at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.<init>(PersistentHashMap.java:45)
+			at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.<init>(PersistentHashMap.java:71)
+			at org.jetbrains.kotlin.incremental.storage.LazyStorage.createMap(LazyStorage.kt:62)
+			at org.jetbrains.kotlin.incremental.storage.LazyStorage.getStorageOrCreateNew(LazyStorage.kt:59)
 			at org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)
 			at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMemoryStorage.kt:108)
 			at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemoryStorage.kt:136)
@@ -165,19 +230,23 @@ Caused by: java.lang.Exception: Could not close incremental caches in D:\backup\
 			at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
 			at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:87)
 			... 27 more
-		Suppressed: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\50072581\AppData\Local\Pub\Cache\hosted\pub.dev\stripe_android-9.6.0+2\android\src\main\kotlin\com\facebook\react\bridge\BaseActivityEventListener.kt and D:\backup\work\Landmark-Assignment-E-Commerce-App\android.
-			at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
-			at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
-			at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:24)
-			at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileToPathConverter.kt:50)
-			at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileToPathConverter.kt:30)
-			at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.hashKey(LinkedCustomHashMap.java:109)
-			at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.remove(LinkedCustomHashMap.java:153)
-			at org.jetbrains.kotlin.com.intellij.util.containers.SLRUMap.remove(SLRUMap.java:89)
-			at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.flushAppendCache(PersistentMapImpl.java:999)
-			at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(PersistentMapImpl.java:451)
-			at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(PersistentMapImpl.java:422)
-			at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(PersistentHashMap.java:105)
+			Suppressed: java.lang.Exception: Storage[D:\backup\work\Landmark-Assignment-E-Commerce-App\build\stripe_android\kotlin\compileReleaseKotlin\cacheable\caches-jvm\lookups\id-to-file.tab] registration stack trace
+				at org.jetbrains.kotlin.com.intellij.util.io.FilePageCache.registerPagedFileStorage(FilePageCache.java:437)
+				... 46 more
+		Suppressed: java.lang.IllegalStateException: Storage for [D:\backup\work\Landmark-Assignment-E-Commerce-App\build\stripe_android\kotlin\compileReleaseKotlin\cacheable\caches-jvm\lookups\file-to-id.tab] is already registered
+			at org.jetbrains.kotlin.com.intellij.util.io.FilePageCache.registerPagedFileStorage(FilePageCache.java:410)
+			at org.jetbrains.kotlin.com.intellij.util.io.PagedFileStorage.<init>(PagedFileStorage.java:72)
+			at org.jetbrains.kotlin.com.intellij.util.io.ResizeableMappedFile.<init>(ResizeableMappedFile.java:55)
+			at org.jetbrains.kotlin.com.intellij.util.io.PersistentBTreeEnumerator.<init>(PersistentBTreeEnumerator.java:128)
+			at org.jetbrains.kotlin.com.intellij.util.io.PersistentEnumerator.createDefaultEnumerator(PersistentEnumerator.java:52)
+			at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.<init>(PersistentMapImpl.java:165)
+			at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.<init>(PersistentMapImpl.java:140)
+			at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapBuilder.buildImplementation(PersistentMapBuilder.java:88)
+			at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapBuilder.build(PersistentMapBuilder.java:71)
+			at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.<init>(PersistentHashMap.java:45)
+			at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.<init>(PersistentHashMap.java:71)
+			at org.jetbrains.kotlin.incremental.storage.LazyStorage.createMap(LazyStorage.kt:62)
+			at org.jetbrains.kotlin.incremental.storage.LazyStorage.getStorageOrCreateNew(LazyStorage.kt:59)
 			at org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)
 			at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMemoryStorage.kt:108)
 			at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemoryStorage.kt:136)
@@ -186,21 +255,25 @@ Caused by: java.lang.Exception: Could not close incremental caches in D:\backup\
 			at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
 			at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:87)
 			... 27 more
+			Suppressed: java.lang.Exception: Storage[D:\backup\work\Landmark-Assignment-E-Commerce-App\build\stripe_android\kotlin\compileReleaseKotlin\cacheable\caches-jvm\lookups\file-to-id.tab] registration stack trace
+				at org.jetbrains.kotlin.com.intellij.util.io.FilePageCache.registerPagedFileStorage(FilePageCache.java:437)
+				... 46 more
 	Suppressed: java.lang.Exception: Could not close incremental caches in D:\backup\work\Landmark-Assignment-E-Commerce-App\build\stripe_android\kotlin\compileReleaseKotlin\cacheable\caches-jvm\inputs: source-to-output.tab
 		... 27 more
-		Suppressed: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\50072581\AppData\Local\Pub\Cache\hosted\pub.dev\stripe_android-9.6.0+2\android\src\main\kotlin\com\facebook\react\bridge\BaseActivityEventListener.kt and D:\backup\work\Landmark-Assignment-E-Commerce-App\android.
-			at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
-			at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
-			at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:24)
-			at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileToPathConverter.kt:50)
-			at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileToPathConverter.kt:30)
-			at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.hashKey(LinkedCustomHashMap.java:109)
-			at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.remove(LinkedCustomHashMap.java:153)
-			at org.jetbrains.kotlin.com.intellij.util.containers.SLRUMap.remove(SLRUMap.java:89)
-			at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.flushAppendCache(PersistentMapImpl.java:999)
-			at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(PersistentMapImpl.java:451)
-			at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(PersistentMapImpl.java:422)
-			at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(PersistentHashMap.java:105)
+		Suppressed: java.lang.IllegalStateException: Storage for [D:\backup\work\Landmark-Assignment-E-Commerce-App\build\stripe_android\kotlin\compileReleaseKotlin\cacheable\caches-jvm\inputs\source-to-output.tab] is already registered
+			at org.jetbrains.kotlin.com.intellij.util.io.FilePageCache.registerPagedFileStorage(FilePageCache.java:410)
+			at org.jetbrains.kotlin.com.intellij.util.io.PagedFileStorage.<init>(PagedFileStorage.java:72)
+			at org.jetbrains.kotlin.com.intellij.util.io.ResizeableMappedFile.<init>(ResizeableMappedFile.java:55)
+			at org.jetbrains.kotlin.com.intellij.util.io.PersistentBTreeEnumerator.<init>(PersistentBTreeEnumerator.java:128)
+			at org.jetbrains.kotlin.com.intellij.util.io.PersistentEnumerator.createDefaultEnumerator(PersistentEnumerator.java:52)
+			at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.<init>(PersistentMapImpl.java:165)
+			at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.<init>(PersistentMapImpl.java:140)
+			at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapBuilder.buildImplementation(PersistentMapBuilder.java:88)
+			at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapBuilder.build(PersistentMapBuilder.java:71)
+			at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.<init>(PersistentHashMap.java:45)
+			at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.<init>(PersistentHashMap.java:71)
+			at org.jetbrains.kotlin.incremental.storage.LazyStorage.createMap(LazyStorage.kt:62)
+			at org.jetbrains.kotlin.incremental.storage.LazyStorage.getStorageOrCreateNew(LazyStorage.kt:59)
 			at org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)
 			at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMemoryStorage.kt:108)
 			at org.jetbrains.kotlin.incremental.storage.AppendableInMemoryStorage.applyChanges(InMemoryStorage.kt:179)
@@ -210,6 +283,9 @@ Caused by: java.lang.Exception: Could not close incremental caches in D:\backup\
 			at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
 			at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:87)
 			... 26 more
+			Suppressed: java.lang.Exception: Storage[D:\backup\work\Landmark-Assignment-E-Commerce-App\build\stripe_android\kotlin\compileReleaseKotlin\cacheable\caches-jvm\inputs\source-to-output.tab] registration stack trace
+				at org.jetbrains.kotlin.com.intellij.util.io.FilePageCache.registerPagedFileStorage(FilePageCache.java:437)
+				... 46 more
 
 exception: c:\Users\50072581\AppData\Local\Pub\Cache\hosted\pub.dev\stripe_android-9.6.0+2\android\src\main\kotlin\com\flutter\stripe\StripeAddToWalletPlatformView.kt:40:66: warning: unchecked cast of 'kotlin.Any?' to 'kotlin.collections.Map<kotlin.String, kotlin.Any>'.
 exception:                 ReadableMap(creationParams["androidAssetSource"] as Map<String, Any>)
@@ -340,21 +416,19 @@ exception:                                                              ^^^^^^^^
 exception: c:\Users\50072581\AppData\Local\Pub\Cache\hosted\pub.dev\stripe_android-9.6.0+2\android\src\main\kotlin\com\reactnativestripesdk\utils\Mappers.kt:891:60: warning: unchecked cast of '@NotNull() java.util.ArrayList<kotlin.Any!>' to 'java.util.ArrayList<kotlin.Int>'.
 exception:             is Int -> result.putIntegerArrayList(key, list as java.util.ArrayList<Int>)
 exception:                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Note: Some input files use or override a deprecated API.
-Note: Recompile with -Xlint:deprecation for details.
-ERROR: Missing classes detected while running R8. Please add the missing classes or apply additional keep rules that are generated in D:\backup\work\Landmark-Assignment-E-Commerce-App\build\app\outputs\mapping\release\missing_rules.txt.
-ERROR: R8: Missing class com.stripe.android.pushProvisioning.PushProvisioningActivity$g (referenced from: void com.reactnativestripesdk.pushprovisioning.PushProvisioningProxy$createActivityEventListener$listener$1.onActivityResult(android.app.Activity, int, int, android.content.Intent))
-Missing class com.stripe.android.pushProvisioning.PushProvisioningActivityStarter$Args (referenced from: void com.reactnativestripesdk.pushprovisioning.DefaultPushProvisioningProxy.beginPushProvisioning(android.app.Activity, java.lang.String, com.reactnativestripesdk.pushprovisioning.EphemeralKeyProvider))
-Missing class com.stripe.android.pushProvisioning.PushProvisioningActivityStarter$Error (referenced from: void com.reactnativestripesdk.pushprovisioning.PushProvisioningProxy$createActivityEventListener$listener$1.onActivityResult(android.app.Activity, int, int, android.content.Intent))
-Missing class com.stripe.android.pushProvisioning.PushProvisioningActivityStarter (referenced from: void com.reactnativestripesdk.pushprovisioning.DefaultPushProvisioningProxy.beginPushProvisioning(android.app.Activity, java.lang.String, com.reactnativestripesdk.pushprovisioning.EphemeralKeyProvider))
-Missing class com.stripe.android.pushProvisioning.PushProvisioningEphemeralKeyProvider (referenced from: void com.reactnativestripesdk.pushprovisioning.DefaultPushProvisioningProxy.beginPushProvisioning(android.app.Activity, java.lang.String, com.reactnativestripesdk.pushprovisioning.EphemeralKeyProvider) and 1 other context)
 
 FAILURE: Build failed with an exception.
 
 * What went wrong:
-Execution failed for task ':app:minifyReleaseWithR8'.
-> A failure occurred while executing com.android.build.gradle.internal.tasks.R8Task$R8Runnable
-   > Compilation failed to complete
+Execution failed for task ':app:processReleaseResources'.
+> A failure occurred while executing com.android.build.gradle.internal.res.LinkApplicationAndroidResourcesTask$TaskAction
+   > Android resource linking failed
+     com.example.landmark_assignment.app-mergeReleaseResources-98:/values/values.xml:6184: error: resource color/black (aka com.example.landmark_assignment:color/black) not found.
+     com.example.landmark_assignment.app-mergeReleaseResources-98:/values/values.xml:6185: error: resource color/black (aka com.example.landmark_assignment:color/black) not found.
+     com.example.landmark_assignment.app-mergeReleaseResources-98:/values/values.xml:6184: error: resource color/black (aka com.example.landmark_assignment:color/black) not found.
+     com.example.landmark_assignment.app-mergeReleaseResources-98:/values/values.xml:6185: error: resource color/black (aka com.example.landmark_assignment:color/black) not found.
+     error: failed linking references.
+
 
 * Try:
 > Run with --stacktrace option to get the stack trace.
@@ -362,7 +436,7 @@ Execution failed for task ':app:minifyReleaseWithR8'.
 > Run with --scan to get full insights.
 > Get more help at https://help.gradle.org.
 
-BUILD FAILED in 5m 10s
-Running Gradle task 'assembleRelease'...                          311.4s
+BUILD FAILED in 2m 30s
+Running Gradle task 'assembleRelease'...                          151.4s
 Gradle task assembleRelease failed with exit code 1
 Process finished with exit code 1
