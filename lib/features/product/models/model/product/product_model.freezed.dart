@@ -12,7 +12,8 @@ part of 'product_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 ProductModel _$ProductModelFromJson(Map<String, dynamic> json) {
   return _ProductModel.fromJson(json);
@@ -40,13 +41,15 @@ mixin _$ProductModel {
 /// @nodoc
 abstract class $ProductModelCopyWith<$Res> {
   factory $ProductModelCopyWith(
-          ProductModel value, $Res Function(ProductModel) then) =
-      _$ProductModelCopyWithImpl<$Res, ProductModel>;
+    ProductModel value,
+    $Res Function(ProductModel) then,
+  ) = _$ProductModelCopyWithImpl<$Res, ProductModel>;
   @useResult
-  $Res call(
-      {@JsonKey(includeIfNull: false) int? statusCode,
-      @JsonKey(includeIfNull: false) String? statusMsg,
-      @JsonKey(includeIfNull: false) List<ProductData>? productModelList});
+  $Res call({
+    @JsonKey(includeIfNull: false) int? statusCode,
+    @JsonKey(includeIfNull: false) String? statusMsg,
+    @JsonKey(includeIfNull: false) List<ProductData>? productModelList,
+  });
 }
 
 /// @nodoc
@@ -68,20 +71,26 @@ class _$ProductModelCopyWithImpl<$Res, $Val extends ProductModel>
     Object? statusMsg = freezed,
     Object? productModelList = freezed,
   }) {
-    return _then(_value.copyWith(
-      statusCode: freezed == statusCode
-          ? _value.statusCode
-          : statusCode // ignore: cast_nullable_to_non_nullable
-              as int?,
-      statusMsg: freezed == statusMsg
-          ? _value.statusMsg
-          : statusMsg // ignore: cast_nullable_to_non_nullable
-              as String?,
-      productModelList: freezed == productModelList
-          ? _value.productModelList
-          : productModelList // ignore: cast_nullable_to_non_nullable
-              as List<ProductData>?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            statusCode:
+                freezed == statusCode
+                    ? _value.statusCode
+                    : statusCode // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            statusMsg:
+                freezed == statusMsg
+                    ? _value.statusMsg
+                    : statusMsg // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            productModelList:
+                freezed == productModelList
+                    ? _value.productModelList
+                    : productModelList // ignore: cast_nullable_to_non_nullable
+                        as List<ProductData>?,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -89,14 +98,16 @@ class _$ProductModelCopyWithImpl<$Res, $Val extends ProductModel>
 abstract class _$$ProductModelImplCopyWith<$Res>
     implements $ProductModelCopyWith<$Res> {
   factory _$$ProductModelImplCopyWith(
-          _$ProductModelImpl value, $Res Function(_$ProductModelImpl) then) =
-      __$$ProductModelImplCopyWithImpl<$Res>;
+    _$ProductModelImpl value,
+    $Res Function(_$ProductModelImpl) then,
+  ) = __$$ProductModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(includeIfNull: false) int? statusCode,
-      @JsonKey(includeIfNull: false) String? statusMsg,
-      @JsonKey(includeIfNull: false) List<ProductData>? productModelList});
+  $Res call({
+    @JsonKey(includeIfNull: false) int? statusCode,
+    @JsonKey(includeIfNull: false) String? statusMsg,
+    @JsonKey(includeIfNull: false) List<ProductData>? productModelList,
+  });
 }
 
 /// @nodoc
@@ -104,8 +115,9 @@ class __$$ProductModelImplCopyWithImpl<$Res>
     extends _$ProductModelCopyWithImpl<$Res, _$ProductModelImpl>
     implements _$$ProductModelImplCopyWith<$Res> {
   __$$ProductModelImplCopyWithImpl(
-      _$ProductModelImpl _value, $Res Function(_$ProductModelImpl) _then)
-      : super(_value, _then);
+    _$ProductModelImpl _value,
+    $Res Function(_$ProductModelImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ProductModel
   /// with the given fields replaced by the non-null parameter values.
@@ -116,31 +128,36 @@ class __$$ProductModelImplCopyWithImpl<$Res>
     Object? statusMsg = freezed,
     Object? productModelList = freezed,
   }) {
-    return _then(_$ProductModelImpl(
-      statusCode: freezed == statusCode
-          ? _value.statusCode
-          : statusCode // ignore: cast_nullable_to_non_nullable
-              as int?,
-      statusMsg: freezed == statusMsg
-          ? _value.statusMsg
-          : statusMsg // ignore: cast_nullable_to_non_nullable
-              as String?,
-      productModelList: freezed == productModelList
-          ? _value._productModelList
-          : productModelList // ignore: cast_nullable_to_non_nullable
-              as List<ProductData>?,
-    ));
+    return _then(
+      _$ProductModelImpl(
+        statusCode:
+            freezed == statusCode
+                ? _value.statusCode
+                : statusCode // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        statusMsg:
+            freezed == statusMsg
+                ? _value.statusMsg
+                : statusMsg // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        productModelList:
+            freezed == productModelList
+                ? _value._productModelList
+                : productModelList // ignore: cast_nullable_to_non_nullable
+                    as List<ProductData>?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$ProductModelImpl implements _ProductModel {
-  const _$ProductModelImpl(
-      {@JsonKey(includeIfNull: false) this.statusCode,
-      @JsonKey(includeIfNull: false) this.statusMsg,
-      @JsonKey(includeIfNull: false) final List<ProductData>? productModelList})
-      : _productModelList = productModelList;
+  const _$ProductModelImpl({
+    @JsonKey(includeIfNull: false) this.statusCode,
+    @JsonKey(includeIfNull: false) this.statusMsg,
+    @JsonKey(includeIfNull: false) final List<ProductData>? productModelList,
+  }) : _productModelList = productModelList;
 
   factory _$ProductModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$ProductModelImplFromJson(json);
@@ -177,14 +194,20 @@ class _$ProductModelImpl implements _ProductModel {
                 other.statusCode == statusCode) &&
             (identical(other.statusMsg, statusMsg) ||
                 other.statusMsg == statusMsg) &&
-            const DeepCollectionEquality()
-                .equals(other._productModelList, _productModelList));
+            const DeepCollectionEquality().equals(
+              other._productModelList,
+              _productModelList,
+            ));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, statusCode, statusMsg,
-      const DeepCollectionEquality().hash(_productModelList));
+  int get hashCode => Object.hash(
+    runtimeType,
+    statusCode,
+    statusMsg,
+    const DeepCollectionEquality().hash(_productModelList),
+  );
 
   /// Create a copy of ProductModel
   /// with the given fields replaced by the non-null parameter values.
@@ -196,18 +219,16 @@ class _$ProductModelImpl implements _ProductModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ProductModelImplToJson(
-      this,
-    );
+    return _$$ProductModelImplToJson(this);
   }
 }
 
 abstract class _ProductModel implements ProductModel {
-  const factory _ProductModel(
-      {@JsonKey(includeIfNull: false) final int? statusCode,
-      @JsonKey(includeIfNull: false) final String? statusMsg,
-      @JsonKey(includeIfNull: false)
-      final List<ProductData>? productModelList}) = _$ProductModelImpl;
+  const factory _ProductModel({
+    @JsonKey(includeIfNull: false) final int? statusCode,
+    @JsonKey(includeIfNull: false) final String? statusMsg,
+    @JsonKey(includeIfNull: false) final List<ProductData>? productModelList,
+  }) = _$ProductModelImpl;
 
   factory _ProductModel.fromJson(Map<String, dynamic> json) =
       _$ProductModelImpl.fromJson;
@@ -257,17 +278,19 @@ mixin _$ProductData {
 /// @nodoc
 abstract class $ProductDataCopyWith<$Res> {
   factory $ProductDataCopyWith(
-          ProductData value, $Res Function(ProductData) then) =
-      _$ProductDataCopyWithImpl<$Res, ProductData>;
+    ProductData value,
+    $Res Function(ProductData) then,
+  ) = _$ProductDataCopyWithImpl<$Res, ProductData>;
   @useResult
-  $Res call(
-      {int id,
-      String title,
-      double price,
-      String description,
-      String category,
-      String image,
-      Rating rating});
+  $Res call({
+    int id,
+    String title,
+    double price,
+    String description,
+    String category,
+    String image,
+    Rating rating,
+  });
 
   $RatingCopyWith<$Res> get rating;
 }
@@ -295,36 +318,46 @@ class _$ProductDataCopyWithImpl<$Res, $Val extends ProductData>
     Object? image = null,
     Object? rating = null,
   }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as double,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      category: null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as String,
-      image: null == image
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
-              as String,
-      rating: null == rating
-          ? _value.rating
-          : rating // ignore: cast_nullable_to_non_nullable
-              as Rating,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            id:
+                null == id
+                    ? _value.id
+                    : id // ignore: cast_nullable_to_non_nullable
+                        as int,
+            title:
+                null == title
+                    ? _value.title
+                    : title // ignore: cast_nullable_to_non_nullable
+                        as String,
+            price:
+                null == price
+                    ? _value.price
+                    : price // ignore: cast_nullable_to_non_nullable
+                        as double,
+            description:
+                null == description
+                    ? _value.description
+                    : description // ignore: cast_nullable_to_non_nullable
+                        as String,
+            category:
+                null == category
+                    ? _value.category
+                    : category // ignore: cast_nullable_to_non_nullable
+                        as String,
+            image:
+                null == image
+                    ? _value.image
+                    : image // ignore: cast_nullable_to_non_nullable
+                        as String,
+            rating:
+                null == rating
+                    ? _value.rating
+                    : rating // ignore: cast_nullable_to_non_nullable
+                        as Rating,
+          )
+          as $Val,
+    );
   }
 
   /// Create a copy of ProductData
@@ -342,18 +375,20 @@ class _$ProductDataCopyWithImpl<$Res, $Val extends ProductData>
 abstract class _$$ProductDataImplCopyWith<$Res>
     implements $ProductDataCopyWith<$Res> {
   factory _$$ProductDataImplCopyWith(
-          _$ProductDataImpl value, $Res Function(_$ProductDataImpl) then) =
-      __$$ProductDataImplCopyWithImpl<$Res>;
+    _$ProductDataImpl value,
+    $Res Function(_$ProductDataImpl) then,
+  ) = __$$ProductDataImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {int id,
-      String title,
-      double price,
-      String description,
-      String category,
-      String image,
-      Rating rating});
+  $Res call({
+    int id,
+    String title,
+    double price,
+    String description,
+    String category,
+    String image,
+    Rating rating,
+  });
 
   @override
   $RatingCopyWith<$Res> get rating;
@@ -364,8 +399,9 @@ class __$$ProductDataImplCopyWithImpl<$Res>
     extends _$ProductDataCopyWithImpl<$Res, _$ProductDataImpl>
     implements _$$ProductDataImplCopyWith<$Res> {
   __$$ProductDataImplCopyWithImpl(
-      _$ProductDataImpl _value, $Res Function(_$ProductDataImpl) _then)
-      : super(_value, _then);
+    _$ProductDataImpl _value,
+    $Res Function(_$ProductDataImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ProductData
   /// with the given fields replaced by the non-null parameter values.
@@ -380,50 +416,60 @@ class __$$ProductDataImplCopyWithImpl<$Res>
     Object? image = null,
     Object? rating = null,
   }) {
-    return _then(_$ProductDataImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as double,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      category: null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as String,
-      image: null == image
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
-              as String,
-      rating: null == rating
-          ? _value.rating
-          : rating // ignore: cast_nullable_to_non_nullable
-              as Rating,
-    ));
+    return _then(
+      _$ProductDataImpl(
+        id:
+            null == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                    as int,
+        title:
+            null == title
+                ? _value.title
+                : title // ignore: cast_nullable_to_non_nullable
+                    as String,
+        price:
+            null == price
+                ? _value.price
+                : price // ignore: cast_nullable_to_non_nullable
+                    as double,
+        description:
+            null == description
+                ? _value.description
+                : description // ignore: cast_nullable_to_non_nullable
+                    as String,
+        category:
+            null == category
+                ? _value.category
+                : category // ignore: cast_nullable_to_non_nullable
+                    as String,
+        image:
+            null == image
+                ? _value.image
+                : image // ignore: cast_nullable_to_non_nullable
+                    as String,
+        rating:
+            null == rating
+                ? _value.rating
+                : rating // ignore: cast_nullable_to_non_nullable
+                    as Rating,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$ProductDataImpl implements _ProductData {
-  const _$ProductDataImpl(
-      {required this.id,
-      required this.title,
-      required this.price,
-      required this.description,
-      required this.category,
-      required this.image,
-      required this.rating});
+  const _$ProductDataImpl({
+    required this.id,
+    required this.title,
+    required this.price,
+    required this.description,
+    required this.category,
+    required this.image,
+    required this.rating,
+  });
 
   factory _$ProductDataImpl.fromJson(Map<String, dynamic> json) =>
       _$$ProductDataImplFromJson(json);
@@ -467,7 +513,15 @@ class _$ProductDataImpl implements _ProductData {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, title, price, description, category, image, rating);
+    runtimeType,
+    id,
+    title,
+    price,
+    description,
+    category,
+    image,
+    rating,
+  );
 
   /// Create a copy of ProductData
   /// with the given fields replaced by the non-null parameter values.
@@ -479,21 +533,20 @@ class _$ProductDataImpl implements _ProductData {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ProductDataImplToJson(
-      this,
-    );
+    return _$$ProductDataImplToJson(this);
   }
 }
 
 abstract class _ProductData implements ProductData {
-  const factory _ProductData(
-      {required final int id,
-      required final String title,
-      required final double price,
-      required final String description,
-      required final String category,
-      required final String image,
-      required final Rating rating}) = _$ProductDataImpl;
+  const factory _ProductData({
+    required final int id,
+    required final String title,
+    required final double price,
+    required final String description,
+    required final String category,
+    required final String image,
+    required final Rating rating,
+  }) = _$ProductDataImpl;
 
   factory _ProductData.fromJson(Map<String, dynamic> json) =
       _$ProductDataImpl.fromJson;
@@ -561,28 +614,31 @@ class _$RatingCopyWithImpl<$Res, $Val extends Rating>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? rate = null,
-    Object? count = null,
-  }) {
-    return _then(_value.copyWith(
-      rate: null == rate
-          ? _value.rate
-          : rate // ignore: cast_nullable_to_non_nullable
-              as double,
-      count: null == count
-          ? _value.count
-          : count // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
+  $Res call({Object? rate = null, Object? count = null}) {
+    return _then(
+      _value.copyWith(
+            rate:
+                null == rate
+                    ? _value.rate
+                    : rate // ignore: cast_nullable_to_non_nullable
+                        as double,
+            count:
+                null == count
+                    ? _value.count
+                    : count // ignore: cast_nullable_to_non_nullable
+                        as int,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$RatingImplCopyWith<$Res> implements $RatingCopyWith<$Res> {
   factory _$$RatingImplCopyWith(
-          _$RatingImpl value, $Res Function(_$RatingImpl) then) =
-      __$$RatingImplCopyWithImpl<$Res>;
+    _$RatingImpl value,
+    $Res Function(_$RatingImpl) then,
+  ) = __$$RatingImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({double rate, int count});
@@ -593,27 +649,29 @@ class __$$RatingImplCopyWithImpl<$Res>
     extends _$RatingCopyWithImpl<$Res, _$RatingImpl>
     implements _$$RatingImplCopyWith<$Res> {
   __$$RatingImplCopyWithImpl(
-      _$RatingImpl _value, $Res Function(_$RatingImpl) _then)
-      : super(_value, _then);
+    _$RatingImpl _value,
+    $Res Function(_$RatingImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of Rating
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? rate = null,
-    Object? count = null,
-  }) {
-    return _then(_$RatingImpl(
-      rate: null == rate
-          ? _value.rate
-          : rate // ignore: cast_nullable_to_non_nullable
-              as double,
-      count: null == count
-          ? _value.count
-          : count // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
+  $Res call({Object? rate = null, Object? count = null}) {
+    return _then(
+      _$RatingImpl(
+        rate:
+            null == rate
+                ? _value.rate
+                : rate // ignore: cast_nullable_to_non_nullable
+                    as double,
+        count:
+            null == count
+                ? _value.count
+                : count // ignore: cast_nullable_to_non_nullable
+                    as int,
+      ),
+    );
   }
 }
 
@@ -658,15 +716,15 @@ class _$RatingImpl implements _Rating {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RatingImplToJson(
-      this,
-    );
+    return _$$RatingImplToJson(this);
   }
 }
 
 abstract class _Rating implements Rating {
-  const factory _Rating(
-      {required final double rate, required final int count}) = _$RatingImpl;
+  const factory _Rating({
+    required final double rate,
+    required final int count,
+  }) = _$RatingImpl;
 
   factory _Rating.fromJson(Map<String, dynamic> json) = _$RatingImpl.fromJson;
 

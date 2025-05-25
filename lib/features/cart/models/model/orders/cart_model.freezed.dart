@@ -12,7 +12,8 @@ part of 'cart_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 CartModel _$CartModelFromJson(Map<String, dynamic> json) {
   return _CartModel.fromJson(json);
@@ -42,10 +43,11 @@ abstract class $CartModelCopyWith<$Res> {
   factory $CartModelCopyWith(CartModel value, $Res Function(CartModel) then) =
       _$CartModelCopyWithImpl<$Res, CartModel>;
   @useResult
-  $Res call(
-      {@JsonKey(includeIfNull: false) int? statusCode,
-      @JsonKey(includeIfNull: false) String? statusMsg,
-      @JsonKey(includeIfNull: false) List<UserCart>? userCart});
+  $Res call({
+    @JsonKey(includeIfNull: false) int? statusCode,
+    @JsonKey(includeIfNull: false) String? statusMsg,
+    @JsonKey(includeIfNull: false) List<UserCart>? userCart,
+  });
 }
 
 /// @nodoc
@@ -67,20 +69,26 @@ class _$CartModelCopyWithImpl<$Res, $Val extends CartModel>
     Object? statusMsg = freezed,
     Object? userCart = freezed,
   }) {
-    return _then(_value.copyWith(
-      statusCode: freezed == statusCode
-          ? _value.statusCode
-          : statusCode // ignore: cast_nullable_to_non_nullable
-              as int?,
-      statusMsg: freezed == statusMsg
-          ? _value.statusMsg
-          : statusMsg // ignore: cast_nullable_to_non_nullable
-              as String?,
-      userCart: freezed == userCart
-          ? _value.userCart
-          : userCart // ignore: cast_nullable_to_non_nullable
-              as List<UserCart>?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            statusCode:
+                freezed == statusCode
+                    ? _value.statusCode
+                    : statusCode // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            statusMsg:
+                freezed == statusMsg
+                    ? _value.statusMsg
+                    : statusMsg // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            userCart:
+                freezed == userCart
+                    ? _value.userCart
+                    : userCart // ignore: cast_nullable_to_non_nullable
+                        as List<UserCart>?,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -88,14 +96,16 @@ class _$CartModelCopyWithImpl<$Res, $Val extends CartModel>
 abstract class _$$CartModelImplCopyWith<$Res>
     implements $CartModelCopyWith<$Res> {
   factory _$$CartModelImplCopyWith(
-          _$CartModelImpl value, $Res Function(_$CartModelImpl) then) =
-      __$$CartModelImplCopyWithImpl<$Res>;
+    _$CartModelImpl value,
+    $Res Function(_$CartModelImpl) then,
+  ) = __$$CartModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(includeIfNull: false) int? statusCode,
-      @JsonKey(includeIfNull: false) String? statusMsg,
-      @JsonKey(includeIfNull: false) List<UserCart>? userCart});
+  $Res call({
+    @JsonKey(includeIfNull: false) int? statusCode,
+    @JsonKey(includeIfNull: false) String? statusMsg,
+    @JsonKey(includeIfNull: false) List<UserCart>? userCart,
+  });
 }
 
 /// @nodoc
@@ -103,8 +113,9 @@ class __$$CartModelImplCopyWithImpl<$Res>
     extends _$CartModelCopyWithImpl<$Res, _$CartModelImpl>
     implements _$$CartModelImplCopyWith<$Res> {
   __$$CartModelImplCopyWithImpl(
-      _$CartModelImpl _value, $Res Function(_$CartModelImpl) _then)
-      : super(_value, _then);
+    _$CartModelImpl _value,
+    $Res Function(_$CartModelImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of CartModel
   /// with the given fields replaced by the non-null parameter values.
@@ -115,31 +126,36 @@ class __$$CartModelImplCopyWithImpl<$Res>
     Object? statusMsg = freezed,
     Object? userCart = freezed,
   }) {
-    return _then(_$CartModelImpl(
-      statusCode: freezed == statusCode
-          ? _value.statusCode
-          : statusCode // ignore: cast_nullable_to_non_nullable
-              as int?,
-      statusMsg: freezed == statusMsg
-          ? _value.statusMsg
-          : statusMsg // ignore: cast_nullable_to_non_nullable
-              as String?,
-      userCart: freezed == userCart
-          ? _value._userCart
-          : userCart // ignore: cast_nullable_to_non_nullable
-              as List<UserCart>?,
-    ));
+    return _then(
+      _$CartModelImpl(
+        statusCode:
+            freezed == statusCode
+                ? _value.statusCode
+                : statusCode // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        statusMsg:
+            freezed == statusMsg
+                ? _value.statusMsg
+                : statusMsg // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        userCart:
+            freezed == userCart
+                ? _value._userCart
+                : userCart // ignore: cast_nullable_to_non_nullable
+                    as List<UserCart>?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$CartModelImpl implements _CartModel {
-  const _$CartModelImpl(
-      {@JsonKey(includeIfNull: false) this.statusCode,
-      @JsonKey(includeIfNull: false) this.statusMsg,
-      @JsonKey(includeIfNull: false) final List<UserCart>? userCart})
-      : _userCart = userCart;
+  const _$CartModelImpl({
+    @JsonKey(includeIfNull: false) this.statusCode,
+    @JsonKey(includeIfNull: false) this.statusMsg,
+    @JsonKey(includeIfNull: false) final List<UserCart>? userCart,
+  }) : _userCart = userCart;
 
   factory _$CartModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$CartModelImplFromJson(json);
@@ -180,8 +196,12 @@ class _$CartModelImpl implements _CartModel {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, statusCode, statusMsg,
-      const DeepCollectionEquality().hash(_userCart));
+  int get hashCode => Object.hash(
+    runtimeType,
+    statusCode,
+    statusMsg,
+    const DeepCollectionEquality().hash(_userCart),
+  );
 
   /// Create a copy of CartModel
   /// with the given fields replaced by the non-null parameter values.
@@ -193,18 +213,16 @@ class _$CartModelImpl implements _CartModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$CartModelImplToJson(
-      this,
-    );
+    return _$$CartModelImplToJson(this);
   }
 }
 
 abstract class _CartModel implements CartModel {
-  const factory _CartModel(
-          {@JsonKey(includeIfNull: false) final int? statusCode,
-          @JsonKey(includeIfNull: false) final String? statusMsg,
-          @JsonKey(includeIfNull: false) final List<UserCart>? userCart}) =
-      _$CartModelImpl;
+  const factory _CartModel({
+    @JsonKey(includeIfNull: false) final int? statusCode,
+    @JsonKey(includeIfNull: false) final String? statusMsg,
+    @JsonKey(includeIfNull: false) final List<UserCart>? userCart,
+  }) = _$CartModelImpl;
 
   factory _CartModel.fromJson(Map<String, dynamic> json) =
       _$CartModelImpl.fromJson;
@@ -260,12 +278,13 @@ abstract class $UserCartCopyWith<$Res> {
   factory $UserCartCopyWith(UserCart value, $Res Function(UserCart) then) =
       _$UserCartCopyWithImpl<$Res, UserCart>;
   @useResult
-  $Res call(
-      {@JsonKey(includeIfNull: false) int? id,
-      @JsonKey(includeIfNull: false) int? userId,
-      @JsonKey(includeIfNull: false) String? date,
-      @JsonKey(includeIfNull: false) List<Products>? products,
-      @JsonKey(includeIfNull: false) @JsonKey(name: '__v') int? iV});
+  $Res call({
+    @JsonKey(includeIfNull: false) int? id,
+    @JsonKey(includeIfNull: false) int? userId,
+    @JsonKey(includeIfNull: false) String? date,
+    @JsonKey(includeIfNull: false) List<Products>? products,
+    @JsonKey(includeIfNull: false) @JsonKey(name: '__v') int? iV,
+  });
 }
 
 /// @nodoc
@@ -289,28 +308,36 @@ class _$UserCartCopyWithImpl<$Res, $Val extends UserCart>
     Object? products = freezed,
     Object? iV = freezed,
   }) {
-    return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      userId: freezed == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      date: freezed == date
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
-              as String?,
-      products: freezed == products
-          ? _value.products
-          : products // ignore: cast_nullable_to_non_nullable
-              as List<Products>?,
-      iV: freezed == iV
-          ? _value.iV
-          : iV // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            id:
+                freezed == id
+                    ? _value.id
+                    : id // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            userId:
+                freezed == userId
+                    ? _value.userId
+                    : userId // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            date:
+                freezed == date
+                    ? _value.date
+                    : date // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            products:
+                freezed == products
+                    ? _value.products
+                    : products // ignore: cast_nullable_to_non_nullable
+                        as List<Products>?,
+            iV:
+                freezed == iV
+                    ? _value.iV
+                    : iV // ignore: cast_nullable_to_non_nullable
+                        as int?,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -318,16 +345,18 @@ class _$UserCartCopyWithImpl<$Res, $Val extends UserCart>
 abstract class _$$UserCartImplCopyWith<$Res>
     implements $UserCartCopyWith<$Res> {
   factory _$$UserCartImplCopyWith(
-          _$UserCartImpl value, $Res Function(_$UserCartImpl) then) =
-      __$$UserCartImplCopyWithImpl<$Res>;
+    _$UserCartImpl value,
+    $Res Function(_$UserCartImpl) then,
+  ) = __$$UserCartImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(includeIfNull: false) int? id,
-      @JsonKey(includeIfNull: false) int? userId,
-      @JsonKey(includeIfNull: false) String? date,
-      @JsonKey(includeIfNull: false) List<Products>? products,
-      @JsonKey(includeIfNull: false) @JsonKey(name: '__v') int? iV});
+  $Res call({
+    @JsonKey(includeIfNull: false) int? id,
+    @JsonKey(includeIfNull: false) int? userId,
+    @JsonKey(includeIfNull: false) String? date,
+    @JsonKey(includeIfNull: false) List<Products>? products,
+    @JsonKey(includeIfNull: false) @JsonKey(name: '__v') int? iV,
+  });
 }
 
 /// @nodoc
@@ -335,8 +364,9 @@ class __$$UserCartImplCopyWithImpl<$Res>
     extends _$UserCartCopyWithImpl<$Res, _$UserCartImpl>
     implements _$$UserCartImplCopyWith<$Res> {
   __$$UserCartImplCopyWithImpl(
-      _$UserCartImpl _value, $Res Function(_$UserCartImpl) _then)
-      : super(_value, _then);
+    _$UserCartImpl _value,
+    $Res Function(_$UserCartImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of UserCart
   /// with the given fields replaced by the non-null parameter values.
@@ -349,41 +379,48 @@ class __$$UserCartImplCopyWithImpl<$Res>
     Object? products = freezed,
     Object? iV = freezed,
   }) {
-    return _then(_$UserCartImpl(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      userId: freezed == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      date: freezed == date
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
-              as String?,
-      products: freezed == products
-          ? _value._products
-          : products // ignore: cast_nullable_to_non_nullable
-              as List<Products>?,
-      iV: freezed == iV
-          ? _value.iV
-          : iV // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      _$UserCartImpl(
+        id:
+            freezed == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        userId:
+            freezed == userId
+                ? _value.userId
+                : userId // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        date:
+            freezed == date
+                ? _value.date
+                : date // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        products:
+            freezed == products
+                ? _value._products
+                : products // ignore: cast_nullable_to_non_nullable
+                    as List<Products>?,
+        iV:
+            freezed == iV
+                ? _value.iV
+                : iV // ignore: cast_nullable_to_non_nullable
+                    as int?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$UserCartImpl implements _UserCart {
-  const _$UserCartImpl(
-      {@JsonKey(includeIfNull: false) this.id,
-      @JsonKey(includeIfNull: false) this.userId,
-      @JsonKey(includeIfNull: false) this.date,
-      @JsonKey(includeIfNull: false) final List<Products>? products,
-      @JsonKey(includeIfNull: false) @JsonKey(name: '__v') this.iV})
-      : _products = products;
+  const _$UserCartImpl({
+    @JsonKey(includeIfNull: false) this.id,
+    @JsonKey(includeIfNull: false) this.userId,
+    @JsonKey(includeIfNull: false) this.date,
+    @JsonKey(includeIfNull: false) final List<Products>? products,
+    @JsonKey(includeIfNull: false) @JsonKey(name: '__v') this.iV,
+  }) : _products = products;
 
   factory _$UserCartImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserCartImplFromJson(json);
@@ -432,8 +469,14 @@ class _$UserCartImpl implements _UserCart {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, userId, date,
-      const DeepCollectionEquality().hash(_products), iV);
+  int get hashCode => Object.hash(
+    runtimeType,
+    id,
+    userId,
+    date,
+    const DeepCollectionEquality().hash(_products),
+    iV,
+  );
 
   /// Create a copy of UserCart
   /// with the given fields replaced by the non-null parameter values.
@@ -445,20 +488,18 @@ class _$UserCartImpl implements _UserCart {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$UserCartImplToJson(
-      this,
-    );
+    return _$$UserCartImplToJson(this);
   }
 }
 
 abstract class _UserCart implements UserCart {
-  const factory _UserCart(
-          {@JsonKey(includeIfNull: false) final int? id,
-          @JsonKey(includeIfNull: false) final int? userId,
-          @JsonKey(includeIfNull: false) final String? date,
-          @JsonKey(includeIfNull: false) final List<Products>? products,
-          @JsonKey(includeIfNull: false) @JsonKey(name: '__v') final int? iV}) =
-      _$UserCartImpl;
+  const factory _UserCart({
+    @JsonKey(includeIfNull: false) final int? id,
+    @JsonKey(includeIfNull: false) final int? userId,
+    @JsonKey(includeIfNull: false) final String? date,
+    @JsonKey(includeIfNull: false) final List<Products>? products,
+    @JsonKey(includeIfNull: false) @JsonKey(name: '__v') final int? iV,
+  }) = _$UserCartImpl;
 
   factory _UserCart.fromJson(Map<String, dynamic> json) =
       _$UserCartImpl.fromJson;
@@ -518,11 +559,12 @@ abstract class $ProductsCopyWith<$Res> {
   factory $ProductsCopyWith(Products value, $Res Function(Products) then) =
       _$ProductsCopyWithImpl<$Res, Products>;
   @useResult
-  $Res call(
-      {@JsonKey(includeIfNull: false) int? productId,
-      @JsonKey(includeIfNull: false) int? quantity,
-      @JsonKey(includeIfNull: false) bool isSelected,
-      @JsonKey(includeIfNull: false) double price});
+  $Res call({
+    @JsonKey(includeIfNull: false) int? productId,
+    @JsonKey(includeIfNull: false) int? quantity,
+    @JsonKey(includeIfNull: false) bool isSelected,
+    @JsonKey(includeIfNull: false) double price,
+  });
 }
 
 /// @nodoc
@@ -545,24 +587,31 @@ class _$ProductsCopyWithImpl<$Res, $Val extends Products>
     Object? isSelected = null,
     Object? price = null,
   }) {
-    return _then(_value.copyWith(
-      productId: freezed == productId
-          ? _value.productId
-          : productId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      quantity: freezed == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as int?,
-      isSelected: null == isSelected
-          ? _value.isSelected
-          : isSelected // ignore: cast_nullable_to_non_nullable
-              as bool,
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as double,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            productId:
+                freezed == productId
+                    ? _value.productId
+                    : productId // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            quantity:
+                freezed == quantity
+                    ? _value.quantity
+                    : quantity // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            isSelected:
+                null == isSelected
+                    ? _value.isSelected
+                    : isSelected // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            price:
+                null == price
+                    ? _value.price
+                    : price // ignore: cast_nullable_to_non_nullable
+                        as double,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -570,15 +619,17 @@ class _$ProductsCopyWithImpl<$Res, $Val extends Products>
 abstract class _$$ProductsImplCopyWith<$Res>
     implements $ProductsCopyWith<$Res> {
   factory _$$ProductsImplCopyWith(
-          _$ProductsImpl value, $Res Function(_$ProductsImpl) then) =
-      __$$ProductsImplCopyWithImpl<$Res>;
+    _$ProductsImpl value,
+    $Res Function(_$ProductsImpl) then,
+  ) = __$$ProductsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(includeIfNull: false) int? productId,
-      @JsonKey(includeIfNull: false) int? quantity,
-      @JsonKey(includeIfNull: false) bool isSelected,
-      @JsonKey(includeIfNull: false) double price});
+  $Res call({
+    @JsonKey(includeIfNull: false) int? productId,
+    @JsonKey(includeIfNull: false) int? quantity,
+    @JsonKey(includeIfNull: false) bool isSelected,
+    @JsonKey(includeIfNull: false) double price,
+  });
 }
 
 /// @nodoc
@@ -586,8 +637,9 @@ class __$$ProductsImplCopyWithImpl<$Res>
     extends _$ProductsCopyWithImpl<$Res, _$ProductsImpl>
     implements _$$ProductsImplCopyWith<$Res> {
   __$$ProductsImplCopyWithImpl(
-      _$ProductsImpl _value, $Res Function(_$ProductsImpl) _then)
-      : super(_value, _then);
+    _$ProductsImpl _value,
+    $Res Function(_$ProductsImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of Products
   /// with the given fields replaced by the non-null parameter values.
@@ -599,35 +651,42 @@ class __$$ProductsImplCopyWithImpl<$Res>
     Object? isSelected = null,
     Object? price = null,
   }) {
-    return _then(_$ProductsImpl(
-      productId: freezed == productId
-          ? _value.productId
-          : productId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      quantity: freezed == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as int?,
-      isSelected: null == isSelected
-          ? _value.isSelected
-          : isSelected // ignore: cast_nullable_to_non_nullable
-              as bool,
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as double,
-    ));
+    return _then(
+      _$ProductsImpl(
+        productId:
+            freezed == productId
+                ? _value.productId
+                : productId // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        quantity:
+            freezed == quantity
+                ? _value.quantity
+                : quantity // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        isSelected:
+            null == isSelected
+                ? _value.isSelected
+                : isSelected // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        price:
+            null == price
+                ? _value.price
+                : price // ignore: cast_nullable_to_non_nullable
+                    as double,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$ProductsImpl implements _Products {
-  const _$ProductsImpl(
-      {@JsonKey(includeIfNull: false) this.productId,
-      @JsonKey(includeIfNull: false) this.quantity,
-      @JsonKey(includeIfNull: false) this.isSelected = false,
-      @JsonKey(includeIfNull: false) this.price = 0});
+  const _$ProductsImpl({
+    @JsonKey(includeIfNull: false) this.productId,
+    @JsonKey(includeIfNull: false) this.quantity,
+    @JsonKey(includeIfNull: false) this.isSelected = false,
+    @JsonKey(includeIfNull: false) this.price = 0,
+  });
 
   factory _$ProductsImpl.fromJson(Map<String, dynamic> json) =>
       _$$ProductsImplFromJson(json);
@@ -679,18 +738,17 @@ class _$ProductsImpl implements _Products {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ProductsImplToJson(
-      this,
-    );
+    return _$$ProductsImplToJson(this);
   }
 }
 
 abstract class _Products implements Products {
-  const factory _Products(
-      {@JsonKey(includeIfNull: false) final int? productId,
-      @JsonKey(includeIfNull: false) final int? quantity,
-      @JsonKey(includeIfNull: false) final bool isSelected,
-      @JsonKey(includeIfNull: false) final double price}) = _$ProductsImpl;
+  const factory _Products({
+    @JsonKey(includeIfNull: false) final int? productId,
+    @JsonKey(includeIfNull: false) final int? quantity,
+    @JsonKey(includeIfNull: false) final bool isSelected,
+    @JsonKey(includeIfNull: false) final double price,
+  }) = _$ProductsImpl;
 
   factory _Products.fromJson(Map<String, dynamic> json) =
       _$ProductsImpl.fromJson;

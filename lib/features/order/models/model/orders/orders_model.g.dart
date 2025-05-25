@@ -10,9 +10,10 @@ _$OrdersModelImpl _$$OrdersModelImplFromJson(Map<String, dynamic> json) =>
     _$OrdersModelImpl(
       statusCode: (json['statusCode'] as num?)?.toInt(),
       statusMsg: json['statusMsg'] as String?,
-      userOrders: (json['userOrders'] as List<dynamic>?)
-          ?.map((e) => UserOrders.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      userOrders:
+          (json['userOrders'] as List<dynamic>?)
+              ?.map((e) => UserOrders.fromJson(e as Map<String, dynamic>))
+              .toList(),
     );
 
 Map<String, dynamic> _$$OrdersModelImplToJson(_$OrdersModelImpl instance) =>
@@ -27,9 +28,10 @@ _$UserOrdersImpl _$$UserOrdersImplFromJson(Map<String, dynamic> json) =>
       id: (json['id'] as num?)?.toInt(),
       userId: (json['userId'] as num?)?.toInt(),
       date: json['date'] as String?,
-      products: (json['products'] as List<dynamic>?)
-          ?.map((e) => Products.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      products:
+          (json['products'] as List<dynamic>?)
+              ?.map((e) => Products.fromJson(e as Map<String, dynamic>))
+              .toList(),
       iV: (json['iV'] as num?)?.toInt(),
     );
 

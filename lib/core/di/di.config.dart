@@ -19,6 +19,7 @@ import '../../features/home/viewmodels/home_view_model.dart' as _i490;
 import '../../features/onbording/viewmodels/onboarding_view_model.dart'
     as _i504;
 import '../../features/order/viewmodels/orders_view_model.dart' as _i1070;
+import '../../features/payment/viewmodels/payment_view_model.dart' as _i179;
 import '../../features/product/viewmodels/products_view_model.dart' as _i946;
 import '../../features/profile/viewmodels/profile_view_model.dart' as _i317;
 import '../firebase/firebase_handler.dart' as _i455;
@@ -29,17 +30,14 @@ _i174.GetIt $initGetIt(
   String? environment,
   _i526.EnvironmentFilter? environmentFilter,
 }) {
-  final gh = _i526.GetItHelper(
-    getIt,
-    environment,
-    environmentFilter,
-  );
+  final gh = _i526.GetItHelper(getIt, environment, environmentFilter);
   final firebaseModule = _$FirebaseModule();
   gh.singleton<_i605.AuthViewModel>(() => _i605.AuthViewModel());
   gh.singleton<_i957.CartViewModel>(() => _i957.CartViewModel());
   gh.singleton<_i490.HomeViewModel>(() => _i490.HomeViewModel());
   gh.singleton<_i504.OnBoardingViewModel>(() => _i504.OnBoardingViewModel());
   gh.singleton<_i1070.OrdersViewModel>(() => _i1070.OrdersViewModel());
+  gh.singleton<_i179.PaymentViewModel>(() => _i179.PaymentViewModel());
   gh.singleton<_i946.ProductsViewModel>(() => _i946.ProductsViewModel());
   gh.singleton<_i317.ProfileViewModel>(() => _i317.ProfileViewModel());
   gh.lazySingleton<_i59.FirebaseAuth>(() => firebaseModule.firebaseAuth);

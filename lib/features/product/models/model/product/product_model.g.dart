@@ -10,18 +10,19 @@ _$ProductModelImpl _$$ProductModelImplFromJson(Map<String, dynamic> json) =>
     _$ProductModelImpl(
       statusCode: (json['statusCode'] as num?)?.toInt(),
       statusMsg: json['statusMsg'] as String?,
-      productModelList: (json['productModelList'] as List<dynamic>?)
-          ?.map((e) => ProductData.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      productModelList:
+          (json['productModelList'] as List<dynamic>?)
+              ?.map((e) => ProductData.fromJson(e as Map<String, dynamic>))
+              .toList(),
     );
 
-Map<String, dynamic> _$$ProductModelImplToJson(_$ProductModelImpl instance) =>
-    <String, dynamic>{
-      if (instance.statusCode case final value?) 'statusCode': value,
-      if (instance.statusMsg case final value?) 'statusMsg': value,
-      if (instance.productModelList case final value?)
-        'productModelList': value,
-    };
+Map<String, dynamic> _$$ProductModelImplToJson(
+  _$ProductModelImpl instance,
+) => <String, dynamic>{
+  if (instance.statusCode case final value?) 'statusCode': value,
+  if (instance.statusMsg case final value?) 'statusMsg': value,
+  if (instance.productModelList case final value?) 'productModelList': value,
+};
 
 _$ProductDataImpl _$$ProductDataImplFromJson(Map<String, dynamic> json) =>
     _$ProductDataImpl(
@@ -46,12 +47,9 @@ Map<String, dynamic> _$$ProductDataImplToJson(_$ProductDataImpl instance) =>
     };
 
 _$RatingImpl _$$RatingImplFromJson(Map<String, dynamic> json) => _$RatingImpl(
-      rate: (json['rate'] as num).toDouble(),
-      count: (json['count'] as num).toInt(),
-    );
+  rate: (json['rate'] as num).toDouble(),
+  count: (json['count'] as num).toInt(),
+);
 
 Map<String, dynamic> _$$RatingImplToJson(_$RatingImpl instance) =>
-    <String, dynamic>{
-      'rate': instance.rate,
-      'count': instance.count,
-    };
+    <String, dynamic>{'rate': instance.rate, 'count': instance.count};

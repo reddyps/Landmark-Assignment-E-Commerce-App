@@ -12,7 +12,8 @@ part of 'cart_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 CartModel _$CartModelFromJson(Map<String, dynamic> json) {
   return _CartModel.fromJson(json);
@@ -46,12 +47,13 @@ abstract class $CartModelCopyWith<$Res> {
   factory $CartModelCopyWith(CartModel value, $Res Function(CartModel) then) =
       _$CartModelCopyWithImpl<$Res, CartModel>;
   @useResult
-  $Res call(
-      {@JsonKey(includeIfNull: false) int? id,
-      @JsonKey(includeIfNull: false) int? userId,
-      @JsonKey(includeIfNull: false) int? statusCode,
-      @JsonKey(includeIfNull: false) String? statusMsg,
-      @JsonKey(includeIfNull: false) List<CartItem>? cartList});
+  $Res call({
+    @JsonKey(includeIfNull: false) int? id,
+    @JsonKey(includeIfNull: false) int? userId,
+    @JsonKey(includeIfNull: false) int? statusCode,
+    @JsonKey(includeIfNull: false) String? statusMsg,
+    @JsonKey(includeIfNull: false) List<CartItem>? cartList,
+  });
 }
 
 /// @nodoc
@@ -75,28 +77,36 @@ class _$CartModelCopyWithImpl<$Res, $Val extends CartModel>
     Object? statusMsg = freezed,
     Object? cartList = freezed,
   }) {
-    return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      userId: freezed == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      statusCode: freezed == statusCode
-          ? _value.statusCode
-          : statusCode // ignore: cast_nullable_to_non_nullable
-              as int?,
-      statusMsg: freezed == statusMsg
-          ? _value.statusMsg
-          : statusMsg // ignore: cast_nullable_to_non_nullable
-              as String?,
-      cartList: freezed == cartList
-          ? _value.cartList
-          : cartList // ignore: cast_nullable_to_non_nullable
-              as List<CartItem>?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            id:
+                freezed == id
+                    ? _value.id
+                    : id // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            userId:
+                freezed == userId
+                    ? _value.userId
+                    : userId // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            statusCode:
+                freezed == statusCode
+                    ? _value.statusCode
+                    : statusCode // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            statusMsg:
+                freezed == statusMsg
+                    ? _value.statusMsg
+                    : statusMsg // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            cartList:
+                freezed == cartList
+                    ? _value.cartList
+                    : cartList // ignore: cast_nullable_to_non_nullable
+                        as List<CartItem>?,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -104,16 +114,18 @@ class _$CartModelCopyWithImpl<$Res, $Val extends CartModel>
 abstract class _$$CartModelImplCopyWith<$Res>
     implements $CartModelCopyWith<$Res> {
   factory _$$CartModelImplCopyWith(
-          _$CartModelImpl value, $Res Function(_$CartModelImpl) then) =
-      __$$CartModelImplCopyWithImpl<$Res>;
+    _$CartModelImpl value,
+    $Res Function(_$CartModelImpl) then,
+  ) = __$$CartModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(includeIfNull: false) int? id,
-      @JsonKey(includeIfNull: false) int? userId,
-      @JsonKey(includeIfNull: false) int? statusCode,
-      @JsonKey(includeIfNull: false) String? statusMsg,
-      @JsonKey(includeIfNull: false) List<CartItem>? cartList});
+  $Res call({
+    @JsonKey(includeIfNull: false) int? id,
+    @JsonKey(includeIfNull: false) int? userId,
+    @JsonKey(includeIfNull: false) int? statusCode,
+    @JsonKey(includeIfNull: false) String? statusMsg,
+    @JsonKey(includeIfNull: false) List<CartItem>? cartList,
+  });
 }
 
 /// @nodoc
@@ -121,8 +133,9 @@ class __$$CartModelImplCopyWithImpl<$Res>
     extends _$CartModelCopyWithImpl<$Res, _$CartModelImpl>
     implements _$$CartModelImplCopyWith<$Res> {
   __$$CartModelImplCopyWithImpl(
-      _$CartModelImpl _value, $Res Function(_$CartModelImpl) _then)
-      : super(_value, _then);
+    _$CartModelImpl _value,
+    $Res Function(_$CartModelImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of CartModel
   /// with the given fields replaced by the non-null parameter values.
@@ -135,41 +148,48 @@ class __$$CartModelImplCopyWithImpl<$Res>
     Object? statusMsg = freezed,
     Object? cartList = freezed,
   }) {
-    return _then(_$CartModelImpl(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      userId: freezed == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      statusCode: freezed == statusCode
-          ? _value.statusCode
-          : statusCode // ignore: cast_nullable_to_non_nullable
-              as int?,
-      statusMsg: freezed == statusMsg
-          ? _value.statusMsg
-          : statusMsg // ignore: cast_nullable_to_non_nullable
-              as String?,
-      cartList: freezed == cartList
-          ? _value._cartList
-          : cartList // ignore: cast_nullable_to_non_nullable
-              as List<CartItem>?,
-    ));
+    return _then(
+      _$CartModelImpl(
+        id:
+            freezed == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        userId:
+            freezed == userId
+                ? _value.userId
+                : userId // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        statusCode:
+            freezed == statusCode
+                ? _value.statusCode
+                : statusCode // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        statusMsg:
+            freezed == statusMsg
+                ? _value.statusMsg
+                : statusMsg // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        cartList:
+            freezed == cartList
+                ? _value._cartList
+                : cartList // ignore: cast_nullable_to_non_nullable
+                    as List<CartItem>?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$CartModelImpl implements _CartModel {
-  const _$CartModelImpl(
-      {@JsonKey(includeIfNull: false) this.id,
-      @JsonKey(includeIfNull: false) this.userId,
-      @JsonKey(includeIfNull: false) this.statusCode,
-      @JsonKey(includeIfNull: false) this.statusMsg,
-      @JsonKey(includeIfNull: false) final List<CartItem>? cartList})
-      : _cartList = cartList;
+  const _$CartModelImpl({
+    @JsonKey(includeIfNull: false) this.id,
+    @JsonKey(includeIfNull: false) this.userId,
+    @JsonKey(includeIfNull: false) this.statusCode,
+    @JsonKey(includeIfNull: false) this.statusMsg,
+    @JsonKey(includeIfNull: false) final List<CartItem>? cartList,
+  }) : _cartList = cartList;
 
   factory _$CartModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$CartModelImplFromJson(json);
@@ -218,8 +238,14 @@ class _$CartModelImpl implements _CartModel {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, userId, statusCode,
-      statusMsg, const DeepCollectionEquality().hash(_cartList));
+  int get hashCode => Object.hash(
+    runtimeType,
+    id,
+    userId,
+    statusCode,
+    statusMsg,
+    const DeepCollectionEquality().hash(_cartList),
+  );
 
   /// Create a copy of CartModel
   /// with the given fields replaced by the non-null parameter values.
@@ -231,20 +257,18 @@ class _$CartModelImpl implements _CartModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$CartModelImplToJson(
-      this,
-    );
+    return _$$CartModelImplToJson(this);
   }
 }
 
 abstract class _CartModel implements CartModel {
-  const factory _CartModel(
-          {@JsonKey(includeIfNull: false) final int? id,
-          @JsonKey(includeIfNull: false) final int? userId,
-          @JsonKey(includeIfNull: false) final int? statusCode,
-          @JsonKey(includeIfNull: false) final String? statusMsg,
-          @JsonKey(includeIfNull: false) final List<CartItem>? cartList}) =
-      _$CartModelImpl;
+  const factory _CartModel({
+    @JsonKey(includeIfNull: false) final int? id,
+    @JsonKey(includeIfNull: false) final int? userId,
+    @JsonKey(includeIfNull: false) final int? statusCode,
+    @JsonKey(includeIfNull: false) final String? statusMsg,
+    @JsonKey(includeIfNull: false) final List<CartItem>? cartList,
+  }) = _$CartModelImpl;
 
   factory _CartModel.fromJson(Map<String, dynamic> json) =
       _$CartModelImpl.fromJson;
@@ -301,13 +325,14 @@ abstract class $CartItemCopyWith<$Res> {
   factory $CartItemCopyWith(CartItem value, $Res Function(CartItem) then) =
       _$CartItemCopyWithImpl<$Res, CartItem>;
   @useResult
-  $Res call(
-      {int id,
-      String title,
-      double price,
-      String description,
-      String category,
-      String image});
+  $Res call({
+    int id,
+    String title,
+    double price,
+    String description,
+    String category,
+    String image,
+  });
 }
 
 /// @nodoc
@@ -332,32 +357,41 @@ class _$CartItemCopyWithImpl<$Res, $Val extends CartItem>
     Object? category = null,
     Object? image = null,
   }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as double,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      category: null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as String,
-      image: null == image
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            id:
+                null == id
+                    ? _value.id
+                    : id // ignore: cast_nullable_to_non_nullable
+                        as int,
+            title:
+                null == title
+                    ? _value.title
+                    : title // ignore: cast_nullable_to_non_nullable
+                        as String,
+            price:
+                null == price
+                    ? _value.price
+                    : price // ignore: cast_nullable_to_non_nullable
+                        as double,
+            description:
+                null == description
+                    ? _value.description
+                    : description // ignore: cast_nullable_to_non_nullable
+                        as String,
+            category:
+                null == category
+                    ? _value.category
+                    : category // ignore: cast_nullable_to_non_nullable
+                        as String,
+            image:
+                null == image
+                    ? _value.image
+                    : image // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -365,17 +399,19 @@ class _$CartItemCopyWithImpl<$Res, $Val extends CartItem>
 abstract class _$$CartItemImplCopyWith<$Res>
     implements $CartItemCopyWith<$Res> {
   factory _$$CartItemImplCopyWith(
-          _$CartItemImpl value, $Res Function(_$CartItemImpl) then) =
-      __$$CartItemImplCopyWithImpl<$Res>;
+    _$CartItemImpl value,
+    $Res Function(_$CartItemImpl) then,
+  ) = __$$CartItemImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {int id,
-      String title,
-      double price,
-      String description,
-      String category,
-      String image});
+  $Res call({
+    int id,
+    String title,
+    double price,
+    String description,
+    String category,
+    String image,
+  });
 }
 
 /// @nodoc
@@ -383,8 +419,9 @@ class __$$CartItemImplCopyWithImpl<$Res>
     extends _$CartItemCopyWithImpl<$Res, _$CartItemImpl>
     implements _$$CartItemImplCopyWith<$Res> {
   __$$CartItemImplCopyWithImpl(
-      _$CartItemImpl _value, $Res Function(_$CartItemImpl) _then)
-      : super(_value, _then);
+    _$CartItemImpl _value,
+    $Res Function(_$CartItemImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of CartItem
   /// with the given fields replaced by the non-null parameter values.
@@ -398,45 +435,54 @@ class __$$CartItemImplCopyWithImpl<$Res>
     Object? category = null,
     Object? image = null,
   }) {
-    return _then(_$CartItemImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as double,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      category: null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as String,
-      image: null == image
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+    return _then(
+      _$CartItemImpl(
+        id:
+            null == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                    as int,
+        title:
+            null == title
+                ? _value.title
+                : title // ignore: cast_nullable_to_non_nullable
+                    as String,
+        price:
+            null == price
+                ? _value.price
+                : price // ignore: cast_nullable_to_non_nullable
+                    as double,
+        description:
+            null == description
+                ? _value.description
+                : description // ignore: cast_nullable_to_non_nullable
+                    as String,
+        category:
+            null == category
+                ? _value.category
+                : category // ignore: cast_nullable_to_non_nullable
+                    as String,
+        image:
+            null == image
+                ? _value.image
+                : image // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$CartItemImpl implements _CartItem {
-  const _$CartItemImpl(
-      {required this.id,
-      required this.title,
-      required this.price,
-      required this.description,
-      required this.category,
-      required this.image});
+  const _$CartItemImpl({
+    required this.id,
+    required this.title,
+    required this.price,
+    required this.description,
+    required this.category,
+    required this.image,
+  });
 
   factory _$CartItemImpl.fromJson(Map<String, dynamic> json) =>
       _$$CartItemImplFromJson(json);
@@ -489,20 +535,19 @@ class _$CartItemImpl implements _CartItem {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$CartItemImplToJson(
-      this,
-    );
+    return _$$CartItemImplToJson(this);
   }
 }
 
 abstract class _CartItem implements CartItem {
-  const factory _CartItem(
-      {required final int id,
-      required final String title,
-      required final double price,
-      required final String description,
-      required final String category,
-      required final String image}) = _$CartItemImpl;
+  const factory _CartItem({
+    required final int id,
+    required final String title,
+    required final double price,
+    required final String description,
+    required final String category,
+    required final String image,
+  }) = _$CartItemImpl;
 
   factory _CartItem.fromJson(Map<String, dynamic> json) =
       _$CartItemImpl.fromJson;
