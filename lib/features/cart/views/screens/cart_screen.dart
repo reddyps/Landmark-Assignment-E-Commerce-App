@@ -9,7 +9,7 @@ import 'package:landmark_assignment/features/cart/views/bloc/cart_detail_event.d
 import 'package:landmark_assignment/features/cart/views/bloc/cart_detail_state.dart';
 import 'package:landmark_assignment/features/cart/views/componets/buy_now_button.dart';
 import 'package:landmark_assignment/features/cart/views/componets/cart_itmes_deatils_Card_widget.dart';
-import 'package:landmark_assignment/features/cart/views/componets/order_success_screen.dart';
+import 'package:landmark_assignment/features/payment/views/componets/order_success_screen.dart';
 import 'package:lottie/lottie.dart';
 class CartScreen extends BaseView<CartViewModel> {
   CartScreen({super.key});
@@ -86,9 +86,6 @@ class CartScreen extends BaseView<CartViewModel> {
                       ),
                     );
                   }
-                }
-                else if(state is CartDetailOrdered){
-                  return OrderSuccessScreen();
                 }
                 else {
                   return Center(

@@ -7,7 +7,7 @@ part 'payment_model.g.dart';
 @freezed
 class PaymentModel with _$PaymentModel {
   const factory PaymentModel({
-    @JsonKey(includeIfNull: false) int? amount,
+    @JsonKey(includeIfNull: false) String? amount,
     @JsonKey(includeIfNull: false) String? currency,
   }) = _PaymentModel;
 

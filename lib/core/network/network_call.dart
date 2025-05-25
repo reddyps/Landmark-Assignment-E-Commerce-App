@@ -4,6 +4,7 @@ import 'package:landmark_assignment/core/models/networkmodel/network_model.dart'
 import 'package:landmark_assignment/core/network/network_request_type.dart';
 import 'package:landmark_assignment/core/network/network_service.dart';
 import 'package:landmark_assignment/core/util/logger/logger_helper.dart';
+import 'package:landmark_assignment/core/util/value/api_endpoints.dart';
 
 Future<void> callApi<T>({
   NetworkRequestType? networkRequestType,
@@ -11,9 +12,17 @@ Future<void> callApi<T>({
   required String endPoint,
   required Function(int statusCode, String errorDesc) failed,
   required Function(dynamic response) success,
-  Options? options, // Optional options
+  Options? options,
+  String? baseURL,// Optional options
 }) async {
   try {
+    if(baseURL != null){
+      APIEndPoints.basedURL = baseURL;
+    }
+    else{
+      APIEndPoints.basedURL = APIEndPoints.fakeStoreBasedURL;
+    }
+
     late Response response;
     var jsonRequest = "";
     if (request != null) { // Check for null here

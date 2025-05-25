@@ -22,7 +22,7 @@ PaymentModel _$PaymentModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$PaymentModel {
   @JsonKey(includeIfNull: false)
-  int? get amount => throw _privateConstructorUsedError;
+  String? get amount => throw _privateConstructorUsedError;
   @JsonKey(includeIfNull: false)
   String? get currency => throw _privateConstructorUsedError;
 
@@ -44,7 +44,7 @@ abstract class $PaymentModelCopyWith<$Res> {
   ) = _$PaymentModelCopyWithImpl<$Res, PaymentModel>;
   @useResult
   $Res call({
-    @JsonKey(includeIfNull: false) int? amount,
+    @JsonKey(includeIfNull: false) String? amount,
     @JsonKey(includeIfNull: false) String? currency,
   });
 }
@@ -70,7 +70,7 @@ class _$PaymentModelCopyWithImpl<$Res, $Val extends PaymentModel>
                 freezed == amount
                     ? _value.amount
                     : amount // ignore: cast_nullable_to_non_nullable
-                        as int?,
+                        as String?,
             currency:
                 freezed == currency
                     ? _value.currency
@@ -92,7 +92,7 @@ abstract class _$$PaymentModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call({
-    @JsonKey(includeIfNull: false) int? amount,
+    @JsonKey(includeIfNull: false) String? amount,
     @JsonKey(includeIfNull: false) String? currency,
   });
 }
@@ -117,7 +117,7 @@ class __$$PaymentModelImplCopyWithImpl<$Res>
             freezed == amount
                 ? _value.amount
                 : amount // ignore: cast_nullable_to_non_nullable
-                    as int?,
+                    as String?,
         currency:
             freezed == currency
                 ? _value.currency
@@ -141,7 +141,7 @@ class _$PaymentModelImpl implements _PaymentModel {
 
   @override
   @JsonKey(includeIfNull: false)
-  final int? amount;
+  final String? amount;
   @override
   @JsonKey(includeIfNull: false)
   final String? currency;
@@ -181,7 +181,7 @@ class _$PaymentModelImpl implements _PaymentModel {
 
 abstract class _PaymentModel implements PaymentModel {
   const factory _PaymentModel({
-    @JsonKey(includeIfNull: false) final int? amount,
+    @JsonKey(includeIfNull: false) final String? amount,
     @JsonKey(includeIfNull: false) final String? currency,
   }) = _$PaymentModelImpl;
 
@@ -190,7 +190,7 @@ abstract class _PaymentModel implements PaymentModel {
 
   @override
   @JsonKey(includeIfNull: false)
-  int? get amount;
+  String? get amount;
   @override
   @JsonKey(includeIfNull: false)
   String? get currency;
