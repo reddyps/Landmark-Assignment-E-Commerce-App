@@ -32,6 +32,8 @@ dependencies:
   lottie: ^3.3.1
   firebase_core:
   google_sign_in: ^6.2.1
+  flutter_stripe: ^9.4.0
+  equatable: ^2.0.7
 
 
 dev_dependencies:

@@ -25,12 +25,29 @@ class ProductsViewModel extends BaseViewModel {
   RxList allProducts =[].obs;
 
 
-  onSelectedItem(ProductData productData){
-    push(ProductDetailsScreen(productData:productData,filteredProducts: filteredProducts,viewModel: this,));
-}
-  onSelectedSuggestedItem(ProductData productData){
-    pushReplacement(ProductDetailsScreen(productData:productData,filteredProducts: filteredProducts,viewModel: this,));
+    onSelectedItem(ProductData productData) {
+    final List<ProductData> suggestions = List.from(filteredProducts)
+      ..removeWhere((p) => p.id == productData.id);
+
+    push(ProductDetailsScreen(
+      productData: productData,
+      filteredProducts: suggestions,
+      viewModel: this,
+    ));
   }
+
+  onSelectedSuggestedItem(ProductData productData) {
+    // Create a new list without the selected product
+    final List<ProductData> suggestions = List.from(filteredProducts)
+      ..removeWhere((p) => p.id == productData.id);
+
+    pushReplacement(ProductDetailsScreen(
+      productData: productData,
+      filteredProducts: suggestions,
+      viewModel: this,
+    ));
+  }
+
   void loadMoreProducts() async {
     if (isLoadingMore.value) return;
     isLoadingMore.value = true;

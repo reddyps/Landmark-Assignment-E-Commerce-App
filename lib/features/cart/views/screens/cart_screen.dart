@@ -57,10 +57,10 @@ class CartScreen extends BaseView<CartViewModel> {
                         const SizedBox(height: 16),
                         BuyNowButton(
                           price: viewModel.totalAmount,
-                          title: "Proceed to Buy",
+                          title: "Proceed to Pay",
                           subTitle: "Total Price",
                           press: () {
-                            cartDetailBloc!.add(OrderCartDetail(viewModel));
+                            cartDetailBloc!.add(ProceedToPay(viewModel));
                           },
                         ),
                         const SizedBox(height: 12),

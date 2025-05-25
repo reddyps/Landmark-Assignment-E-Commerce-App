@@ -7,4 +7,5 @@ class GlobalVariables{
   static HomeScreenBloc? homeScreenBloc;
   static RxInt homeScreenTab = 0.obs;
   static late UserModel userData;
+  static RxInt cartItemCount = 0.obs;
 }

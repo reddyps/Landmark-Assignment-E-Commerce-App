@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:landmark_assignment/core/util/extension/method_extension.dart';
 import 'package:landmark_assignment/core/util/theme/constants.dart';
 import 'package:landmark_assignment/core/util/value/images.dart';
@@ -9,10 +10,14 @@ import 'package:landmark_assignment/features/product/views/components/product_bu
 import 'package:landmark_assignment/features/product/views/components/product_images.dart';
 import 'package:landmark_assignment/features/product/views/components/product_info.dart';
 import 'package:landmark_assignment/features/product/views/components/product_list_tile.dart';
+import 'package:landmark_assignment/shared/widgets/animated_cart_button.dart' show AnimatedCartButton;
 import 'package:landmark_assignment/shared/widgets/cart_button.dart';
 import 'package:landmark_assignment/shared/widgets/custom_modal_bottom_sheet.dart';
 import 'package:landmark_assignment/shared/widgets/product_card.dart';
 import 'package:landmark_assignment/shared/widgets/review_card.dart';
+
+import '../../../../core/util/value/global_variables.dart';
+import '../../../home/views/bloc/home_screen/homescreen_event.dart';
 class ProductDetailsScreen extends StatelessWidget {
   const ProductDetailsScreen({super.key, required this.productData, required this.filteredProducts,required this.viewModel});
   final List<ProductData> filteredProducts;
@@ -42,9 +47,18 @@ class ProductDetailsScreen extends StatelessWidget {
               actions: [
                 IconButton(
                   onPressed: () {},
-                  icon: SvgPicture.asset(Images.bookmark,
-                      color: Theme.of(context).textTheme.bodyLarge!.color),
+                  icon: SvgPicture.asset(
+                    Images.bookmark,
+                    color: Theme.of(context).textTheme.bodyLarge!.color,
+                  ),
                 ),
+                Obx(() => AnimatedCartButton(
+                  itemCount: GlobalVariables.cartItemCount.value,
+                  onPressed: () {
+                    Navigator.pop(context);
+                    GlobalVariables.homeScreenBloc?.add(ShowCartEvent());
+                  },
+                )),
               ],
             ),
              ProductImages(

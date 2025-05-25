@@ -104,4 +104,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get userLogOut => 'User Logout Successfully.';
+
+  @override
+  String get shop => 'Shop';
+
+  @override
+  String get cart => 'Cart';
+
+  @override
+  String get orders => 'Orders';
+
+  @override
+  String get profile => 'Profile';
 }

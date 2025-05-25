@@ -6,10 +6,15 @@ import 'package:landmark_assignment/core/navigation/routes.dart';
 import 'package:landmark_assignment/core/util/theme/app_theme.dart';
 import 'package:landmark_assignment/core/util/value/size_config.dart';
 import 'package:landmark_assignment/l10n/app_localizations.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
+
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initilizeFirebase();
   configureDependencies();
+  Stripe.publishableKey =
+  "pk_test_51LjocGK8ksAoxFf2T3BnkDu57BM1Kk0KEh5Y8iOOSNS3gH0liQx46AKTKh22UfOum4EtUC5pbHsnR5PfXbwJ2MtD00v11UEdVv";
   runApp(const MyApp());
 }
 
@@ -22,7 +27,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       locale: const Locale('en'),
       debugShowCheckedModeBanner: false,
-      home: Routes.onBoardScreen,
+      home: Routes.homeScreen,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       theme: AppTheme.lightTheme(context),

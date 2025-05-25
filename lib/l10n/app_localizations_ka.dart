@@ -105,4 +105,16 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get userLogOut => 'ಬಳಕೆದಾರ ಯಶಸ್ವಿಯಾಗಿ ಲಾಗ್ ಔಟ್ ಆಗಿದ್ದಾರೆ.';
+
+  @override
+  String get shop => 'Shop';
+
+  @override
+  String get cart => 'Cart';
+
+  @override
+  String get orders => 'Orders';
+
+  @override
+  String get profile => 'Profile';
 }

@@ -73,7 +73,8 @@ class CustomTextField extends StatelessWidget with InputBorders {
     return Column(
       children: [
         SizedBox(
-          height: SizeConfig.blockSizeVertical! * 5,
+          height: 60,
+          width: double.infinity,
           child: TextFormField(
             validator : validator,
             obscureText: obscureText!,

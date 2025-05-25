@@ -14,6 +14,11 @@ class OrderCartDetail extends CartDetailEvent {
   OrderCartDetail(this.viewModel);
 }
 
+class ProceedToPay extends CartDetailEvent {
+  final CartViewModel viewModel;
+  ProceedToPay(this.viewModel);
+}
+
 class RemoveItem extends CartDetailEvent {
   final Products product;
   final CartViewModel viewModel;

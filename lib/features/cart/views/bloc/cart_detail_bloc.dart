@@ -30,6 +30,10 @@ class CartDetailBloc extends Bloc<CartDetailEvent, CartDetailState> {
       }
     });
 
+    on<ProceedToPay>((event, emit) async {
+      event.viewModel.navigateTopayment();
+    });
+
     on<RemoveItem>((event, emit) async {
       try {
         await event.viewModel.removeItemFromCart(event.product).whenComplete((){

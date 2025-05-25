@@ -108,7 +108,7 @@ abstract class Images {
   static const _images = 'assets/images/';
   static const loginImage = '${_images}login_dark.png';
   static const signUp = '${_images}signUp_dark.png';
-  static const logoNoBG = '${_images}logoNoBg.png';
+  static const logo = 'assets/logo/land_mark.jpg';
 
   // Animations
   static const _animations = 'assets/animations/';
