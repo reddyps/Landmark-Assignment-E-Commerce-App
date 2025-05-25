@@ -1,0 +1,74 @@
+"ka": 4 untranslated message(s).
+To see a detailed report, use the untranslated-messages-file
+option in the l10n.yaml file:
+untranslated-messages-file: desiredFileName.txt
+<other option>: <other selection>
+
+
+This will generate a JSON format file containing all messages that
+need to be translated.
+Launching lib\main.dart on sdk gphone64 x86 64 in debug mode...
+Running Gradle task 'assembleDebug'...
+Your project is configured with Android NDK 26.3.11579264, but the following plugin(s) depend on a different Android NDK version:
+- connectivity_plus requires Android NDK 27.0.12077973
+- firebase_auth requires Android NDK 27.0.12077973
+- firebase_core requires Android NDK 27.0.12077973
+- google_sign_in_android requires Android NDK 27.0.12077973
+- path_provider_android requires Android NDK 27.0.12077973
+- sqflite_android requires Android NDK 27.0.12077973
+- stripe_android requires Android NDK 27.0.12077973
+Fix this issue by using the highest Android NDK version (they are backward compatible).
+Add the following to D:\backup\work\Landmark-Assignment-E-Commerce-App\android\app\build.gradle.kts:
+
+    android {
+        ndkVersion = "27.0.12077973"
+        ...
+    }
+"ka": 4 untranslated message(s).
+To see a detailed report, use the untranslated-messages-file
+option in the l10n.yaml file:
+untranslated-messages-file: desiredFileName.txt
+<other option>: <other selection>
+
+
+This will generate a JSON format file containing all messages that
+need to be translated.
+D:\backup\work\Landmark-Assignment-E-Commerce-App\android\app\src\debug\AndroidManifest.xml Error:
+	uses-sdk:minSdkVersion 21 cannot be smaller than version 23 declared in library [:firebase_auth] D:\backup\work\Landmark-Assignment-E-Commerce-App\build\firebase_auth\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml as the library might be using APIs not available in 21
+	Suggestion: use a compatible library with a minSdk of at most 21,
+		or increase this project's minSdk version to at least 23,
+		or use tools:overrideLibrary="io.flutter.plugins.firebase.auth" to force usage (may lead to runtime failures)
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:processDebugMainManifest'.
+> Manifest merger failed : uses-sdk:minSdkVersion 21 cannot be smaller than version 23 declared in library [:firebase_auth] D:\backup\work\Landmark-Assignment-E-Commerce-App\build\firebase_auth\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml as the library might be using APIs not available in 21
+  	Suggestion: use a compatible library with a minSdk of at most 21,
+  		or increase this project's minSdk version to at least 23,
+  		or use tools:overrideLibrary="io.flutter.plugins.firebase.auth" to force usage (may lead to runtime failures)
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 6m 25s
+
+┌─ Flutter Fix ─────────────────────────────────────────────────────────────────────────────────┐
+│ The plugin firebase_auth requires a higher Android SDK version.                               │
+│ Fix this issue by adding the following to the file                                            │
+│ D:\backup\work\Landmark-Assignment-E-Commerce-App\android\app\build.gradle:                   │
+│ android {                                                                                     │
+│   defaultConfig {                                                                             │
+│     minSdkVersion 23                                                                          │
+│   }                                                                                           │
+│ }                                                                                             │
+│                                                                                               │
+│ Following this change, your app will not be available to users running Android SDKs below 23. │
+│ Consider searching for a version of this plugin that supports these lower versions of the     │
+│ Android SDK instead.                                                                          │
+│ For more information, see: https://flutter.dev/to/review-gradle-config                        │
+└───────────────────────────────────────────────────────────────────────────────────────────────┘
+Error: Gradle task assembleDebug failed with exit code 1
