@@ -2,11 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:landmark_assignment/features/order/views/componets/orders_screen.dart';
 import 'package:mockito/mockito.dart';
-import 'package:landmark_assignment/features/order/views/orders.dart';
 import 'package:landmark_assignment/features/order/views/bloc/order_detail_bloc.dart';
 import 'package:landmark_assignment/features/order/views/bloc/order_detail_state.dart';
-import 'package:landmark_assignment/features/order/viewmodels/orders_view_model.dart';
 
 class MockOrderDetailBloc extends Mock implements OrderDetailBloc {}
 

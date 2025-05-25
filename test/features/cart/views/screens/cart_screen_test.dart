@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:landmark_assignment/features/cart/views/screens/cart_screen.dart';
 import 'package:mockito/mockito.dart';
-import 'package:landmark_assignment/features/cart/views/screens/cart.dart';
 import 'package:landmark_assignment/features/cart/views/bloc/cart_detail_bloc.dart';
 import 'package:landmark_assignment/features/cart/views/bloc/cart_detail_state.dart';
 import 'package:landmark_assignment/features/cart/views/bloc/cart_detail_event.dart';
@@ -28,7 +28,7 @@ void main() {
   }
 
   testWidgets('renders CartScreen with loading state', (tester) async {
-    when(cartBloc.state).thenReturn(CartDetailLoading());
+    when(cartBloc.state).thenReturn(CartDetailInitial());
 
     await tester.pumpWidget(buildTestableWidget());
     expect(find.byType(CircularProgressIndicator), findsOneWidget);

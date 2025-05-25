@@ -2,11 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:landmark_assignment/features/cart/models/model/orders/cart_model.dart';
+import 'package:landmark_assignment/features/payment/views/componets/payment_screen.dart';
 import 'package:mockito/mockito.dart';
-import 'package:landmark_assignment/features/payment/bloc/payment_bloc.dart';
-import 'package:landmark_assignment/features/payment/viewmodels/payment_view_model.dart';
-import 'package:landmark_assignment/features/payment/views/payment.dart';
-import 'package:landmark_assignment/features/product/models/model/cart/cart_model.dart';
+import 'package:landmark_assignment/features/payment/views/bloc/payment_bloc.dart';
 
 class MockPaymentBloc extends Mock implements PaymentBloc {}
 
