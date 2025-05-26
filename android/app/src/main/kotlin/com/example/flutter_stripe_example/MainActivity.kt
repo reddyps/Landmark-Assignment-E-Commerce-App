@@ -1,4 +1,4 @@
-package com.example.flutter_stripe_example
+package com.example.landmark_assignment
 
 import io.flutter.embedding.android.FlutterFragmentActivity
 

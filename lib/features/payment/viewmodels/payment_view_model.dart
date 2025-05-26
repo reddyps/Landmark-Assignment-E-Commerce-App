@@ -11,30 +11,45 @@ import '../models/repository/payment_repository.dart';
 
 
 @singleton
-class PaymentViewModel extends BaseViewModel { // Changed to ChangeNotifier
+class PaymentViewModel extends BaseViewModel {
   final className = "PaymentViewModel";
 
   late List<Products> selectedItems;
-   createPaymentIntent(double amount) async {
+
+  Future<String?> createPaymentIntent(double amount) async {
     try {
       showCircularIndicator(message: "Please Initiating payment...!");
-      ClientSecretModel clientSecret = await PaymentRepository().createPaymentIntent(PaymentModel(amount: calculateAmount(amount.toString()),currency: "INR"));
+      // Correctly pass the double 'amount' to calculateAmount
+      ClientSecretModel clientSecret = await PaymentRepository().createPaymentIntent(
+          PaymentModel(amount: calculateAmount(amount), currency: "INR"));
       dismissDialogIndicator();
-      if(clientSecret.clientSecret == null || clientSecret.clientSecret!.isEmpty) {
+
+      if (clientSecret.clientSecret == null || clientSecret.clientSecret!.isEmpty) {
         showDialogAuto(method: () => pop(), message: clientSecret.errorDesc ?? "Client Secret is null or empty");
         loge(tag: className, message: "createPaymentIntent failed: clientSecret is null or empty");
         return Future.error('Failed to create payment intent');
       }
       return clientSecret.clientSecret;
     } catch (e) {
+      dismissDialogIndicator(); // Ensure dialog is dismissed on error
       loge(tag: className, message: "createPaymentIntent error: $e");
+      // Re-throw or return null to indicate failure, so makePayment can handle it
+      return null;
     }
   }
 
 
   Future<void> makePayment(double amount) async {
     try {
-      final clientSecret = await createPaymentIntent(amount); // ₹10.00
+      // FIX: Use the 'amount' parameter passed to makePayment
+      final clientSecret = await createPaymentIntent(amount);
+
+      if (clientSecret == null) {
+        // If createPaymentIntent failed and returned null, stop here.
+        loge(message: "makePayment: Client secret is null, payment cannot proceed.");
+        return;
+      }
+
       await Stripe.instance.initPaymentSheet(
         paymentSheetParameters: SetupPaymentSheetParameters(
           paymentIntentClientSecret: clientSecret,
@@ -42,29 +57,34 @@ class PaymentViewModel extends BaseViewModel { // Changed to ChangeNotifier
           googlePay: const PaymentSheetGooglePay(
             merchantCountryCode: "IN",
             currencyCode: "INR",
-            testEnv: true,
+            testEnv: true, // Set to false for production
           ),
         ),
       );
       await Stripe.instance.presentPaymentSheet();
+      // TODO: Add success handling here (e.g., navigate to a success screen, update order status)
+
     } on StripeException catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
-         SnackBar(content: Text('Stripe Exception: ${e.error.localizedMessage}')),
+        SnackBar(content: Text('Stripe Exception: ${e.error.localizedMessage}')),
       );
       loge(message: 'Stripe Exception: ${e.error.localizedMessage}');
       return Future.error('Stripe Exception: ${e.error.localizedMessage}');
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
-         SnackBar(content: Text("makePayment catch : ${e.toString()}")),
+        SnackBar(content: Text("makePayment catch : ${e.toString()}")),
       );
       loge(message: "makePayment catch : ${e.toString()}");
       return Future.error('Unknown Exception: $e');
     }
   }
 
-  calculateAmount(String amount) {
-    final calculatedAmout = (int.parse(amount)) * 100;
-    return calculatedAmout.toString();
+  // FIX: calculateAmount now takes a double and returns a clean integer string
+  String calculateAmount(double amount) {
+    // Multiply by 100 and then convert to int to ensure no decimal places,
+    // then convert to string.
+    final calculatedAmountInSmallestUnit = (amount * 100).toInt();
+    return calculatedAmountInSmallestUnit.toString();
   }
 
   @override
@@ -72,4 +92,3 @@ class PaymentViewModel extends BaseViewModel { // Changed to ChangeNotifier
     super.dispose();
   }
 }
-
