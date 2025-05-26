@@ -37,6 +37,7 @@ class OrderSuccessScreen extends StatelessWidget {
               const Spacer(flex: 2),
               OutlinedButton(
                 onPressed: () {
+                  Navigator.pop(context);
                   GlobalVariables.homeScreenTab.value = 0;
                   GlobalVariables.homeScreenBloc!.add(ShowProductsEvent());
                 },
@@ -45,6 +46,7 @@ class OrderSuccessScreen extends StatelessWidget {
               const SizedBox(height: defaultPadding),
               ElevatedButton(
                 onPressed: () {
+                  Navigator.pop(context);
                   GlobalVariables.homeScreenTab.value = 2;
                   GlobalVariables.homeScreenBloc!.add(ShowOrdersEvent());
                 },
