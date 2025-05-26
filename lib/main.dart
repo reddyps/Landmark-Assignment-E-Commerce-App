@@ -5,6 +5,7 @@ import 'package:landmark_assignment/core/firebase/firebase_handler.dart';
 import 'package:landmark_assignment/core/navigation/routes.dart';
 import 'package:landmark_assignment/core/util/theme/app_theme.dart';
 import 'package:landmark_assignment/core/util/value/size_config.dart';
+import 'package:landmark_assignment/features/payment/views/payment.dart';
 import 'package:landmark_assignment/l10n/app_localizations.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       locale: const Locale('en'),
       debugShowCheckedModeBanner: false,
-      home: Routes.onBoardScreen,
+      home: Payment(selectedItems: []),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       theme: AppTheme.lightTheme(context),

@@ -1,6 +1,6 @@
 import 'dart:convert';
+
 import 'package:dio/dio.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:landmark_assignment/core/network/network_call.dart';
 import 'package:landmark_assignment/core/network/network_request_type.dart';
 import 'package:landmark_assignment/core/util/hardcodeResponse/hardcode_apis.dart';
@@ -8,8 +8,8 @@ import 'package:landmark_assignment/core/util/hardcodeResponse/hardcode_response
 import 'package:landmark_assignment/core/util/logger/logger_helper.dart';
 import 'package:landmark_assignment/core/util/value/api_endpoints.dart';
 import 'package:landmark_assignment/core/util/value/constants.dart';
-import 'package:landmark_assignment/features/order/models/model/orders/orders_model.dart';
 
+import '../model/clientSecret/client_secret_model.dart';
 import '../model/orders/payment_model.dart';
 class PaymentRepository{
   final className="PaymentRepository";
@@ -21,29 +21,23 @@ class PaymentRepository{
     return _singleton;
   }
 
-   createPaymentIntent(PaymentModel request) async {
+  Future<ClientSecretModel>  createPaymentIntent(PaymentModel request) async {
     logD(message: "createPaymentIntent");
-     var response;
+    late ClientSecretModel clientSecretModel;
     try {
-      if(Constants.isHardcodeResponse){
-        response = await hardcodeResponse(hardcodeApi: HardcodeApis.getAllProducts,
-            fromJson: OrdersModel.fromJson);
-      }
-      else{
-        await callApi(
+      await callApi(
           options: Options(headers:  {'Content-Type': 'application/json'}),
           request: request,
           baseURL: APIEndPoints.paymentBasedURL,
-            endPoint: APIEndPoints.paymentIntent,
-            failed: (statusCode, errorDesc) {
-              response = "$statusCode + $errorDesc";
-            },
-            success: (response){
-              response = json.decode(response.body);
-            },
-            networkRequestType: NetworkRequestType.post);
-      }
-      return response;
+          endPoint: APIEndPoints.paymentIntent,
+          failed: (statusCode, errorDesc) {
+            clientSecretModel = ClientSecretModel(statusCode: statusCode, errorDesc: errorDesc);
+          },
+          success: (responseServer){
+            clientSecretModel = ClientSecretModel.fromJson(jsonDecode(jsonEncode(responseServer)));
+          },
+          networkRequestType: NetworkRequestType.post);
+      return clientSecretModel;
     } catch (e) {
       throw e.toString();
     }
