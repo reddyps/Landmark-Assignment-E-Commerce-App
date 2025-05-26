@@ -14,25 +14,23 @@ class PaymentViewModel extends BaseViewModel { // Changed to ChangeNotifier
   final className = "PaymentViewModel";
 
   late List<Products> selectedItems;
-
-  final String testClientSecret = 'pi_3No4L9SGTdxZA1VV1YUsv9Sm_secret_tXJQ...';
-
    createPaymentIntent(double amount) async {
     try {
-      var model = await PaymentRepository().createPaymentIntent(PaymentModel(amount: amount.toString(),currency: "INR"));
-      return model;
+      var clientSecret = await PaymentRepository().createPaymentIntent(PaymentModel(amount: calculateAmount(amount.toString()),currency: "INR"));
+      return clientSecret;
     } catch (e) {
       loge(tag: className, message: "createPaymentIntent error: $e");
     }
   }
 
+
   Future<void> makePayment(double amount) async {
     try {
-      var paymentIntent = createPaymentIntent(amount);
+      final clientSecret = await createPaymentIntent(amount); // ₹10.00
       await Stripe.instance.initPaymentSheet(
         paymentSheetParameters: SetupPaymentSheetParameters(
-          paymentIntentClientSecret: paymentIntent['client_secret'],
-          merchantDisplayName: 'Test Merchant',
+          paymentIntentClientSecret: clientSecret['clientSecret'],
+          merchantDisplayName: 'Landmark Store',
           googlePay: const PaymentSheetGooglePay(
             merchantCountryCode: "IN",
             currencyCode: "INR",
@@ -56,33 +54,10 @@ class PaymentViewModel extends BaseViewModel { // Changed to ChangeNotifier
     }
   }
 
-  Future<void> makeHardcodedPayment() async {
-    try {
-      // Initialize the payment sheet with the hardcoded client secret
-      await Stripe.instance.initPaymentSheet(
-        paymentSheetParameters: SetupPaymentSheetParameters(
-          paymentIntentClientSecret: testClientSecret,
-          merchantDisplayName: 'Test Merchant',
-          googlePay: const PaymentSheetGooglePay(
-            merchantCountryCode: "IN",
-            currencyCode: "INR",
-            testEnv: true,
-          ),
-        ),
-      );
-
-      // Present the payment sheet to the user
-      await Stripe.instance.presentPaymentSheet();
-    } on StripeException catch (e) {
-      // Return a Future error with Stripe-specific exception details
-      return Future.error('Stripe Exception: ${e.error.localizedMessage}');
-    } catch (e) {
-      // Return a Future error for all other exceptions
-      return Future.error('Unknown Exception: $e');
-    }
+  calculateAmount(String amount) {
+    final calculatedAmout = (int.parse(amount)) * 100;
+    return calculatedAmout.toString();
   }
-
-
 
   @override
   void dispose() {

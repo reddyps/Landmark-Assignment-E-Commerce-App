@@ -9,7 +9,6 @@ class AppTheme {
   static ThemeData lightTheme(BuildContext context) {
     return ThemeData(
       brightness: Brightness.light,
-      fontFamily: "Plus Jakarta",
       primarySwatch: primaryMaterialColor,
       primaryColor: primaryColor,
       scaffoldBackgroundColor: Colors.white,
@@ -29,5 +28,4 @@ class AppTheme {
       dataTableTheme: dataTableLightThemeData,
     );
   }
-
 }

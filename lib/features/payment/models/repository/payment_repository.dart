@@ -31,10 +31,7 @@ class PaymentRepository{
       }
       else{
         await callApi(
-          options: Options(headers:  {
-            'Authorization': 'Bearer ${dotenv.env['STRIPE_SECRET']}',
-            'Content-Type': 'application/x-www-form-urlencoded'
-          },),
+          options: Options(headers:  {'Content-Type': 'application/json'}),
           request: request,
           baseURL: APIEndPoints.paymentBasedURL,
             endPoint: APIEndPoints.paymentIntent,

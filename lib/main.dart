@@ -13,8 +13,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initilizeFirebase();
   configureDependencies();
-  Stripe.publishableKey =
-  "pk_test_51LjocGK8ksAoxFf2T3BnkDu57BM1Kk0KEh5Y8iOOSNS3gH0liQx46AKTKh22UfOum4EtUC5pbHsnR5PfXbwJ2MtD00v11UEdVv";
+  Stripe.publishableKey = "pk_test_51RT1tl07f1ixQNzBvnv8XmEg4bc4pM0FtHb7JFwrhBAjFK0M3M6rsQivGBNQSCC6KoiptcZrD4MLnxxHQ1L7o4MC00ZBH4EJta";
   runApp(const MyApp());
 }
 
