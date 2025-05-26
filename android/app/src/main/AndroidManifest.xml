@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.landmark_assignment">
     <application
-        android:label="landmark_assignment1"
+        android:label="landmark_assignment"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -19,14 +19,7 @@ class PaymentViewModel extends BaseViewModel { // Changed to ChangeNotifier
 
    createPaymentIntent(double amount) async {
     try {
-      var model = await PaymentRepository().createPaymentIntent(PaymentModel(amount: amount.toString(),currency: "inr"));
-      // if (model.statusCode == 200) {
-      //   _originalOrders = model.userOrders!;
-      //   userOrders = model.userOrders!
-      //       .map((order) => order.copyWith(products: List<Products>.from(order.products ?? [])))
-      //       .toList();
-      // }
-
+      var model = await PaymentRepository().createPaymentIntent(PaymentModel(amount: amount.toString(),currency: "INR"));
       return model;
     } catch (e) {
       loge(tag: className, message: "createPaymentIntent error: $e");
@@ -35,10 +28,10 @@ class PaymentViewModel extends BaseViewModel { // Changed to ChangeNotifier
 
   Future<void> makePayment(double amount) async {
     try {
-      // Initialize the payment sheet with the hardcoded client secret
+      var paymentIntent = createPaymentIntent(amount);
       await Stripe.instance.initPaymentSheet(
         paymentSheetParameters: SetupPaymentSheetParameters(
-          paymentIntentClientSecret: testClientSecret,
+          paymentIntentClientSecret: paymentIntent['client_secret'],
           merchantDisplayName: 'Test Merchant',
           googlePay: const PaymentSheetGooglePay(
             merchantCountryCode: "IN",
@@ -47,7 +40,6 @@ class PaymentViewModel extends BaseViewModel { // Changed to ChangeNotifier
           ),
         ),
       );
-
       await Stripe.instance.presentPaymentSheet();
     } on StripeException catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(

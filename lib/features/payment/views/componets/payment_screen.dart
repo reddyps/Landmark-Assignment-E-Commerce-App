@@ -134,7 +134,7 @@ class PaymentScreen extends BaseView<PaymentViewModel> {
                             press: () {
                               paymentBloc!.add(
                                 StartPaymentEvent(
-                                  amount: 100,
+                                  amount: total,
                                   paymentViewModel: viewModel,
                                 ),
                               );

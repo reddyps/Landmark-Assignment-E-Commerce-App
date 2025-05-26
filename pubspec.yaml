@@ -32,7 +32,7 @@ dependencies:
   lottie: ^3.3.1
   firebase_core:
   google_sign_in: ^6.2.1
-  flutter_stripe: ^9.4.0
+  flutter_stripe: ^11.5.0
   equatable: ^2.0.7
   flutter_dotenv: ^5.0.2
 
